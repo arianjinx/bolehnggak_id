@@ -1,0 +1,15 @@
+html,
+body {
+  height: 100%;
+}
+
+.wrapper {
+  background: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper > main {
+  flex: 1;
+}

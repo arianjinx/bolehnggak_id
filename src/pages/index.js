@@ -2,20 +2,20 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
+    <SEO title="Beranda" isHomePage />
+    <p>
+      Yuk cari tau hal yang boleh atau nggak boleh dilakuin selama masa
+      Pembatasan Sosial Berskala Besar (PSBB).
+    </p>
+    <h1>Boleh Enggak</h1>
+    <h2>Boleh</h2>
+    <p>Boleh banget tuh.. Nonton Itaewon Class jangan lupa!</p>
+    <Link to="/disclaimer/">Disclaimer</Link>
   </Layout>
-)
+);
 
 export default IndexPage

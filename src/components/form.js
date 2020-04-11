@@ -6,17 +6,23 @@ import { escapeRegexCharacters } from "../utils/utils"
 import "./form.css"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
+import IconTriangle from "../images/icon-triangle.svg"
 
 const focusInputOnSuggestionClick = !isMobile.any
+
 const getSuggestions = value => {
   const escapedValue = escapeRegexCharacters(value.trim())
+
   if (escapedValue === "") {
     return data
   }
-  const regex = new RegExp("^" + escapedValue, "i")
+
+  const regex = new RegExp(escapedValue, "i")
   return data.filter(item => regex.test(item.activity))
 }
+
 const getSuggestionValue = suggestion => suggestion.activity
+
 const renderSuggestion = suggestion => <span>{suggestion.activity}</span>
 
 const Form = () => {
@@ -61,7 +67,7 @@ const Form = () => {
 
   const Box = styled.div`
     ${tw`font-bold cursor-pointer flex items-center bg-white rounded box-border border-solid border border-gray-500 px-6 py-2 justify-center select-none`}
-    min-width: 191px;
+    min-width: 150px;
     ${isShowAutosuggest && tw`rounded-b-none`}
   `
 
@@ -80,7 +86,18 @@ const Form = () => {
         <div className="flex flex-row items-center">
           <div className="my-4 relative mr-4">
             <Box onClick={handleBoxClick}>
-              {selected ? selected.activity : "__________"}
+              {selected ? (
+                <>
+                  {selected.activity}
+                  <img
+                    src={IconTriangle}
+                    alt=""
+                    className="inline-block ml-4"
+                  />
+                </>
+              ) : (
+                "__________"
+              )}
             </Box>
             {isShowAutosuggest && (
               <Autosuggest

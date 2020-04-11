@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Boleh Enggak ___ ?`,
+    title: `Boleh Nggak __ ?`,
     description: `Yuk cari tau hal yang boleh atau nggak boleh dilakuin selama masa 
 Pembatasan Sosial Berskala Besar (PSBB).`,
     author: `@gatsbyjs`,

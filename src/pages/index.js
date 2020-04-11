@@ -17,12 +17,12 @@ const IndexPage = () => {
       <SEO title="Beranda" isHomePage />
       <div className="container mx-auto px-6 lg:px-10 pt-10 lg:pt-40">
         <Intro>
-          Yuk cari tau hal yang <strong className="font-medium">boleh</strong>{" "}
-          atau <strong className="font-medium">nggak boleh</strong> dilakuin
+          Yuk cari tau hal yang <strong className="font-semibold">boleh</strong>{" "}
+          atau <strong className="font-semibold">nggak boleh</strong> dilakuin
           selama masa Pembatasan Sosial Berskala Besar (PSBB)
         </Intro>
         <Form />
-        <a href="#" className="inline-block underline clearfix">
+        <a href="/" className="inline-block underline clearfix">
           <img src={IconRefresh} alt="" className="inline-block mr-2" />
           Acak pertanyaan
         </a>

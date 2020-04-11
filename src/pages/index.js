@@ -35,10 +35,10 @@ const IndexPage = () => {
           atau <strong className="font-medium">nggak boleh</strong> dilakuin
           selama masa Pembatasan Sosial Berskala Besar (PSBB)
         </Intro>
-        <Question>
-          <span className="mr-4">Boleh nggak aku</span>
+        <Question className="flex flex-row items-center max-w-2xl flex-wrap">
+          <div className="mr-4 leading-tight">Boleh nggak aku</div>
           <Form />
-          <span className="ml-4">?</span>
+          <div>?</div>
         </Question>
         {isAnswered && (
           <>
@@ -48,7 +48,7 @@ const IndexPage = () => {
             </Answer>
           </>
         )}
-        <a href="#" className="inline-block mt-4">
+        <a href="#" className="inline-block underline clearfix">
           <img src={IconRefresh} alt="" className="inline-block mr-2" />
           Acak pertanyaan
         </a>

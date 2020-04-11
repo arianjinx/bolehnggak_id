@@ -12,7 +12,7 @@ Pembatasan Sosial Berskala Besar (PSBB).`,
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Inter\\:400,500,600`
+          `Inter:400,500,600`
         ],
       },
     },

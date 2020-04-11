@@ -12,20 +12,6 @@ const IndexPage = () => {
     ${tw`text-base lg:text-xl max-w-xl mb-4 lg:mb-6`}
   `
 
-  const Question = styled.h1`
-    ${tw`font-medium text-3xl lg:text-4xl mb-3 lg:mb-6`};
-  `
-
-  const AnswerHeading = styled.h2`
-    ${tw`text-3xl lg:text-4xl font-bold mb-3 lg:mb-6`};
-  `
-
-  const Answer = styled.div`
-    ${tw`text-xl md:text-3xl`};
-  `
-
-  const isAnswered = false
-
   return (
     <Layout>
       <SEO title="Beranda" isHomePage />
@@ -35,19 +21,7 @@ const IndexPage = () => {
           atau <strong className="font-medium">nggak boleh</strong> dilakuin
           selama masa Pembatasan Sosial Berskala Besar (PSBB)
         </Intro>
-        <Question className="flex flex-row items-center max-w-2xl flex-wrap">
-          <div className="mr-4 leading-tight">Boleh nggak aku</div>
-          <Form />
-          <div>?</div>
-        </Question>
-        {isAnswered && (
-          <>
-            <AnswerHeading>Boleh</AnswerHeading>
-            <Answer>
-              <p>Boleh banget tuh.. Nonton Itaewon Class jangan lupa!</p>
-            </Answer>
-          </>
-        )}
+        <Form />
         <a href="#" className="inline-block underline clearfix">
           <img src={IconRefresh} alt="" className="inline-block mr-2" />
           Acak pertanyaan

@@ -1,21 +1,14 @@
 .react-autosuggest__container {
-  position: absolute;
-  top: 62px;
-  left: 0;
-  display: inline-block;
-  box-sizing: border-box;
+  @apply absolute h-12 left-0 block w-full flex flex-row -mt-px;
+  top: 100%;
 }
 
 .react-autosuggest__input {
+  @apply h-12 p-4 w-full items-start;
   font-weight: 500;
   font-size: 16px;
-  line-height: 19px;
   background: #ffffff;
   border: 1px solid #bdbdbd;
-  box-sizing: border-box;
-  border-radius: 0 0 4px 4px;
-  padding: 16px 24px;
-  width: 100%;
 }
 
 .react-autosuggest__input--focused {
@@ -36,9 +29,10 @@
 }
 
 .react-autosuggest__suggestions-container--open {
+  @apply -mt-px;
+  top: 100%;
   display: block;
   position: absolute;
-  top: 52px;
   width: 100%;
   border: 1px solid #bdbdbd;
   background-color: #fff;
@@ -56,8 +50,7 @@
 }
 
 .react-autosuggest__suggestion {
-  cursor: pointer;
-  padding: 16px 24px;
+  @apply p-4 cursor-pointer flex flex-row items-center;
 }
 
 .react-autosuggest__suggestion--highlighted {

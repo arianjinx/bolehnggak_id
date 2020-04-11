@@ -8,77 +8,105 @@ import styled from "@emotion/styled"
 import tw from "twin.macro"
 
 const focusInputOnSuggestionClick = !isMobile.any
+const getSuggestions = value => {
+  const escapedValue = escapeRegexCharacters(value.trim())
+  if (escapedValue === "") {
+    return data
+  }
+  const regex = new RegExp("^" + escapedValue, "i")
+  return data.filter(item => regex.test(item.activity))
+}
+const getSuggestionValue = suggestion => suggestion.activity
+const renderSuggestion = suggestion => <span>{suggestion.activity}</span>
 
 const Form = () => {
   const [isShowAutosuggest, setIsShowAutosuggest] = useState(false)
   const [value, setValue] = useState("")
-  const [suggestions, setSuggestions] = useState([])
+  const [selected, setSelected] = useState(null)
+  const [suggestions, setSuggestions] = useState(data)
 
-  const getSuggestions = value => {
-    const escapedValue = escapeRegexCharacters(value.trim())
-
-    if (escapedValue === "") {
-      return []
-    }
-
-    const regex = new RegExp("^" + escapedValue, "i")
-
-    return data.filter(item => regex.test(item.activity))
+  const onBlur = () => {
+    setIsShowAutosuggest(false)
   }
 
-  const getSuggestionValue = suggestion => suggestion.activity
-
-  const renderSuggestion = suggestion => <span>{suggestion.activity}</span>
-
-  function onChange(event, { newValue }) {
+  const onChange = (event, { newValue }) => {
     setValue(newValue)
   }
 
-  function onSuggestionsFetchRequested({ value }) {
-    setSuggestions(getSuggestions(value))
+  const onSuggestionsFetchRequested = ({ value }) => {
+    setSuggestions(isShowAutosuggest ? getSuggestions(value) : data)
   }
 
-  function onSuggestionsClearRequested() {
-    setSuggestions([])
+  const onSuggestionsClearRequested = () => {
+    setSuggestions(data)
+  }
+
+  const onSuggestionSelected = (event, { suggestionValue }) => {
+    setIsShowAutosuggest(false)
+    setSelected(data.filter(item => item.activity === suggestionValue)[0])
+  }
+
+  const handleBoxClick = () => {
+    setSuggestions(data)
+    setValue("")
+    setIsShowAutosuggest(!isShowAutosuggest)
   }
 
   const inputProps = {
     placeholder: "Cari kegiatan",
     value,
-    onChange: onChange,
+    onChange,
+    onBlur,
   }
 
   const Box = styled.div`
-    background: #ffffff;
-    border: 1px solid #bdbdbd;
-    box-sizing: border-box;
-    border-radius: 4px;
-    padding: 10px 24px;
+    ${tw`font-bold cursor-pointer flex items-center bg-white rounded box-border border-solid border border-gray-500 px-6 py-2 justify-center select-none`}
+    min-width: 191px;
+    ${isShowAutosuggest && tw`rounded-b-none`}
+  `
 
-    ${tw`font-bold`}
+  const AnswerHeading = styled.h2`
+    ${tw`text-3xl lg:text-4xl font-bold mb-3 lg:mb-6`};
+  `
+
+  const Answer = styled.div`
+    ${tw`text-lg text-gray-700`};
   `
 
   return (
-    <div className="mr-4 relative my-4" style={{ minWidth: 210 }}>
-      <Box
-        onClick={() => setIsShowAutosuggest(!isShowAutosuggest)}
-        className="cursor-pointer"
-      >
-        {value || "__________"}
-      </Box>
-      {isShowAutosuggest && (
-        <Autosuggest
-          suggestions={suggestions}
-          onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-          onSuggestionsClearRequested={onSuggestionsClearRequested}
-          getSuggestionValue={getSuggestionValue}
-          renderSuggestion={renderSuggestion}
-          inputProps={inputProps}
-          focusInputOnSuggestionClick={focusInputOnSuggestionClick}
-          id="form"
-        />
+    <>
+      <div className="flex flex-row items-center max-w-2xl font-medium flex-wrap text-3xl lg:text-4xl">
+        <div className="mr-4 leading-tight ">Boleh nggak aku</div>
+        <div className="flex flex-row items-center">
+          <div className="my-4 relative mr-4">
+            <Box onClick={handleBoxClick}>
+              {selected ? selected.activity : "__________"}
+            </Box>
+            {isShowAutosuggest && (
+              <Autosuggest
+                suggestions={suggestions}
+                onSuggestionsFetchRequested={onSuggestionsFetchRequested}
+                onSuggestionsClearRequested={onSuggestionsClearRequested}
+                getSuggestionValue={getSuggestionValue}
+                renderSuggestion={renderSuggestion}
+                inputProps={inputProps}
+                focusInputOnSuggestionClick={focusInputOnSuggestionClick}
+                onSuggestionSelected={onSuggestionSelected}
+                alwaysRenderSuggestions={true}
+                id="form"
+              />
+            )}
+          </div>
+          <div>?</div>
+        </div>
+      </div>
+      {selected && (
+        <div className="mb-6">
+          <AnswerHeading>{selected.answerTypeLabel}</AnswerHeading>
+          <Answer>{selected.answer}</Answer>
+        </div>
       )}
-    </div>
+    </>
   )
 }
 

@@ -9,13 +9,10 @@ Pembatasan Sosial Berskala Besar (PSBB).`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-postcss`,
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Inter`,
-            variants: [`400`, `500`, `600`],
-          },
+          `Inter\\:400,500,600`
         ],
       },
     },

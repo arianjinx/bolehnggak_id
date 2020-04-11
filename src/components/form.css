@@ -34,7 +34,7 @@
   position: absolute;
   top: 75px;
   width: 100%;
-  border: 1px solid #aaa;
+  border: 1px solid #bdbdbd;
   background-color: #fff;
   font-family: "Inter", sans-serif;
   font-weight: 300;
@@ -60,7 +60,7 @@
 }
 
 .react-autosuggest__section-container {
-  border-top: 1px dashed #ccc;
+  border-top: 1px dashed #bdbdbd;
 }
 
 .react-autosuggest__section-container--first {

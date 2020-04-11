@@ -7,8 +7,7 @@ import "./form.css"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
 import IconTriangle from "../images/icon-triangle.svg"
-
-const focusInputOnSuggestionClick = !isMobile.any
+import { Helmet } from "react-helmet"
 
 const getSuggestions = value => {
   const escapedValue = escapeRegexCharacters(value.trim())
@@ -58,11 +57,15 @@ const Form = () => {
     setIsShowAutosuggest(!isShowAutosuggest)
   }
 
+  const focusInputOnSuggestionClick = !isMobile.any
+  const autoFocus = !isMobile.any
+
   const inputProps = {
     placeholder: "Cari kegiatan",
     value,
     onChange,
     onBlur,
+    autoFocus,
   }
 
   const Box = styled.div`
@@ -75,13 +78,41 @@ const Form = () => {
     ${tw`text-3xl lg:text-4xl font-bold mb-3 lg:mb-6`};
   `
 
-  const Answer = styled.div`
+  const Answer = styled.p`
     ${tw`text-lg text-gray-700`};
   `
 
+  const IconTriangleWrapper = styled.img`
+    ${tw`inline-block ml-4`};
+
+    ${isShowAutosuggest && `transform: rotate(180deg);`}
+  `
+
+  const bgStatusToggler = () => {
+    if (!selected) {
+      return "bg-white"
+    }
+
+    switch (selected.answerType) {
+      case "success":
+        return "bg-green-200"
+      case "warning":
+        return "bg-yellow-200"
+      case "alert":
+        return "bg-red-200"
+      default:
+        break
+    }
+  }
+
   return (
     <>
-      <div className="flex flex-row items-center max-w-2xl font-medium flex-wrap text-3xl lg:text-4xl">
+      <Helmet
+        bodyAttributes={{
+          class: bgStatusToggler(),
+        }}
+      />
+      <div className="flex flex-row items-center font-medium flex-wrap text-3xl lg:text-4xl">
         <div className="mr-4 leading-tight ">Boleh nggak aku</div>
         <div className="flex flex-row items-center">
           <div className="my-4 relative mr-4">
@@ -89,11 +120,7 @@ const Form = () => {
               {selected ? (
                 <>
                   {selected.activity}
-                  <img
-                    src={IconTriangle}
-                    alt=""
-                    className="inline-block ml-4"
-                  />
+                  <IconTriangleWrapper src={IconTriangle} alt="" />
                 </>
               ) : (
                 "__________"
@@ -118,7 +145,7 @@ const Form = () => {
         </div>
       </div>
       {selected && (
-        <div className="mb-6">
+        <div className="mb-6 max-w-3xl">
           <AnswerHeading>{selected.answerTypeLabel}</AnswerHeading>
           <Answer>{selected.answer}</Answer>
         </div>

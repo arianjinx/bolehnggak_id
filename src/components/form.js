@@ -25,6 +25,7 @@ const Form = () => {
           answertypelabel
           activity
           answer
+          answercontent
           reference
         }
       }
@@ -231,12 +232,20 @@ const Form = () => {
             <IconStatus src={iconStatusToggler()} alt="" />
           </AnswerHeading>
           <Answer>
-            {selected.answer.split("\n").map((item, idx) => (
-              <React.Fragment key={idx}>
-                {item}
-                <BreakLine />
-              </React.Fragment>
-            ))}
+            {!selected.answercontent &&
+              selected.answer.split("\n").map((item, idx) => (
+                <React.Fragment key={idx}>
+                  {item}
+                  <BreakLine />
+                </React.Fragment>
+              ))}
+            {selected.answercontent &&
+              selected.answercontent.split("\n").map((item, idx) => (
+                <React.Fragment key={idx}>
+                  {item}
+                  <BreakLine />
+                </React.Fragment>
+              ))}
             <a
               href={selected.reference}
               target="_blank"

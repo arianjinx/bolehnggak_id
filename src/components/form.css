@@ -1,3 +1,29 @@
+::-webkit-input-placeholder {
+  color: theme("colors.gray.500");
+}
+
+:-moz-placeholder {
+  color: theme("colors.gray.500");
+  opacity: 1;
+}
+
+::-moz-placeholder {
+  color: theme("colors.gray.500");
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: theme("colors.gray.500");
+}
+
+::-ms-input-placeholder {
+  color: theme("colors.gray.500");
+}
+
+::placeholder {
+  color: theme("colors.gray.500");
+}
+
 .react-autosuggest__container {
   @apply absolute left-0 block w-full flex flex-row -mt-px;
   top: 100%;

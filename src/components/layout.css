@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-    transition: 0.25s ease background-color;
+  transition: 0.25s ease background-color;
 }

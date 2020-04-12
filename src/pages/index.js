@@ -13,7 +13,10 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Beranda" isHomePage />
+      <SEO
+          title="Boleh Nggak ___ ?"
+          isHomePage
+      />
       <div className="container mx-auto px-6 lg:px-10">
         <Intro>
           Yuk cari tau hal yang <strong className="font-semibold">boleh</strong>{" "}

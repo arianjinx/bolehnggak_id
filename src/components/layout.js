@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
 }
 
 console.log(
-  "%c corona jancok ndang minggato ",
+  "%c corona ndang minggato please ",
   "background: #fed7d7; color: #000; font-size: 32px;"
 )
 

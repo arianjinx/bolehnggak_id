@@ -22,6 +22,7 @@ function SEO({ description, lang, meta, title, isHomePage }) {
             author
             url
             secureUrl
+            canonical
             fbAppId
           }
         }
@@ -79,7 +80,7 @@ function SEO({ description, lang, meta, title, isHomePage }) {
         },
         {
           property: `og:url`,
-          content: site.siteMetadata.url,
+          content: site.siteMetadata.canonical,
         },
         {
           property: `fb:app_id`,

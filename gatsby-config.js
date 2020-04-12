@@ -11,9 +11,7 @@ Pembatasan Sosial Berskala Besar (PSBB).`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `Inter:400,500,600`
-        ],
+        fonts: [`Inter:400,500,600`],
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -36,6 +34,15 @@ Pembatasan Sosial Berskala Besar (PSBB).`,
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: true, // Print removed selectors and processed file names
+        develop: true, // Enable while using `gatsby develop`
+        tailwind: true,
+        ignore: ["form.css"],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

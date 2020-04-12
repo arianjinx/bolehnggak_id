@@ -13,7 +13,7 @@ Pembatasan Sosial Berskala Besar (PSBB).`,
         worksheetTitle: "CROWDSOURCE",
         credentials:
           process.env.NODE_ENV === "production"
-            ? JSON.stringify(process.env.GOOGLE_SERVICE_CREDENTIALS)
+            ? JSON.parse(process.env.GOOGLE_SERVICE_CREDENTIALS)
             : require("./google-service-credential.json"),
       },
     },

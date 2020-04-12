@@ -9,7 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import ogImage from "../images/bolehngga-og.png"
+import ogImage from "../images/bolehnggak-og.png"
 
 function SEO({ description, lang, meta, title, isHomePage }) {
   const { site } = useStaticQuery(
@@ -20,13 +20,14 @@ function SEO({ description, lang, meta, title, isHomePage }) {
             title
             description
             author
+            url
           }
         }
       }
     `
-  );
+  )
 
-  const metaDescription = description || site.siteMetadata.description;
+  const metaDescription = description || site.siteMetadata.description
 
   return (
     <Helmet
@@ -55,12 +56,28 @@ function SEO({ description, lang, meta, title, isHomePage }) {
           content: metaDescription,
         },
         {
-          name: `og:image`,
+          property: `og:image`,
           content: ogImage,
+        },
+        {
+          property: `og:image:secure_url`,
+          content: ogImage,
+        },
+        {
+          property: `og:image:width`,
+          content: "1200",
+        },
+        {
+          property: `og:image:height`,
+          content: "630",
         },
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:url`,
+          content: site.siteMetadata.url,
         },
         {
           name: `twitter:card`,
@@ -87,13 +104,13 @@ SEO.defaultProps = {
   lang: `id`,
   meta: [],
   description: ``,
-};
+}
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-};
+}
 
 export default SEO

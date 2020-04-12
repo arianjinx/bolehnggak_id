@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Boleh Nggak __ ?`,
     description: `Hal yang boleh atau nggak boleh dilakuin saat PSBB COVID-19.`,
+    url: `https://bolehnggak.id`,
     author: `Arian, Wahyu, dan Lintang`,
   },
   plugins: [

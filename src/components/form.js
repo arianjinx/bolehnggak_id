@@ -77,15 +77,12 @@ const Form = () => {
     setIsShowAutosuggest(!isShowAutosuggest)
   }
 
-  const focusInputOnSuggestionClick =
-    typeof window !== `undefined` &&
-    navigator &&
-    !isMobile(navigator.userAgent).any
-
-  const autoFocus =
-    typeof window !== `undefined` &&
-    navigator &&
-    !isMobile(navigator.userAgent).any
+  let focusInputOnSuggestionClick = true
+  let autoFocus = true
+  if (typeof window !== `undefined` && isMobile(navigator.userAgent).any) {
+    focusInputOnSuggestionClick = false
+    autoFocus = false
+  }
 
   const inputProps = {
     placeholder: "Cari kegiatan",

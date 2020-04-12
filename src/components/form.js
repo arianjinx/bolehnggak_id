@@ -25,6 +25,7 @@ const Form = () => {
           answertypelabel
           activity
           answer
+          reference
         }
       }
     }
@@ -236,6 +237,15 @@ const Form = () => {
                 <BreakLine />
               </React.Fragment>
             ))}
+            <a
+              href={selected.reference}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline text-black font-semibold text-sm lg:text-base clearfix outline-none focus:outline-none"
+              onClick={handleRandomize}
+            >
+              Link rujukan
+            </a>
           </Answer>
         </div>
       )}

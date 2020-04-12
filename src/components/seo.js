@@ -21,6 +21,7 @@ function SEO({ description, lang, meta, title, isHomePage }) {
             description
             author
             url
+            secureUrl
             fbAppId
           }
         }
@@ -46,7 +47,7 @@ function SEO({ description, lang, meta, title, isHomePage }) {
         },
         {
           name: `image`,
-          content: ogImage,
+          content: site.siteMetadata.url + ogImage,
         },
         {
           property: `og:title`,
@@ -58,11 +59,11 @@ function SEO({ description, lang, meta, title, isHomePage }) {
         },
         {
           property: `og:image`,
-          content: ogImage,
+          content: site.siteMetadata.url + ogImage,
         },
         {
           property: `og:image:secure_url`,
-          content: ogImage,
+          content: site.siteMetadata.secureUrl + ogImage,
         },
         {
           property: `og:image:width`,

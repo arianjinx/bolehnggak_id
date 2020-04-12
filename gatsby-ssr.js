@@ -1,10 +1,11 @@
+const React = require("react");
 /**
  * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
  *
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
  */
 
-exports.onPreRenderHTML = ({
+export const onPreRenderHTML = ({
   getHeadComponents,
   replaceHeadComponents,
 }) => {

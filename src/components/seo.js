@@ -63,10 +63,6 @@ function SEO({ description, lang, meta, title, isHomePage }) {
           content: site.siteMetadata.url + ogImage,
         },
         {
-          property: `og:image:secure_url`,
-          content: site.siteMetadata.secureUrl + ogImage,
-        },
-        {
           property: `og:image:width`,
           content: "1200",
         },
@@ -93,6 +89,10 @@ function SEO({ description, lang, meta, title, isHomePage }) {
         {
           name: `twitter:creator`,
           content: site.siteMetadata.author,
+        },
+        {
+          name: `twitter:image`,
+          content: site.siteMetadata.url + ogImage,
         },
         {
           name: `twitter:title`,

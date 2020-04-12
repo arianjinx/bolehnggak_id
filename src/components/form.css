@@ -30,7 +30,7 @@
 }
 
 .react-autosuggest__input {
-  @apply py-2 px-3 w-full items-start;
+  @apply py-2 px-3 w-full items-start appearance-none;
   font-weight: 400;
   font-size: 16px;
   background: #ffffff;

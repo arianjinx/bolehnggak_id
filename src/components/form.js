@@ -94,7 +94,7 @@ const Form = () => {
     ${tw`font-bold cursor-pointer flex items-center bg-white rounded box-border border-solid border border-gray-500 px-3 lg:px-6 py-2 justify-center select-none`}
     min-width: 140px;
     @media (min-width: ${theme.screens.lg}) {
-      min-width: 304px;
+      min-width: 290px;
     }
     ${isShowAutosuggest && tw`rounded-b-none`}
   `

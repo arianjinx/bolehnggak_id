@@ -4,6 +4,7 @@ module.exports = {
     description: `Hal yang boleh atau nggak boleh dilakuin saat PSBB COVID-19.`,
     url: `https://bolehnggak.id`,
     author: `Arian, Wahyu, dan Lintang`,
+    fbAppId: `909503169491208`,
   },
   plugins: [
     {

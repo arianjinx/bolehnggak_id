@@ -21,6 +21,7 @@ function SEO({ description, lang, meta, title, isHomePage }) {
             description
             author
             url
+            fbAppId
           }
         }
       }
@@ -78,6 +79,10 @@ function SEO({ description, lang, meta, title, isHomePage }) {
         {
           property: `og:url`,
           content: site.siteMetadata.url,
+        },
+        {
+          property: `fb:app_id`,
+          content: site.siteMetadata.fbAppId,
         },
         {
           name: `twitter:card`,

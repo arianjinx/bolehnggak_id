@@ -8,7 +8,7 @@ const DisclaimerPage = () => (
   <Layout>
     <SEO title="Disclaimer" />
     <div className="container mx-auto px-6 lg:px-10 py-4 pt-10 text-sm">
-      <h1 className="text-base lg:text-4xl">Disclaimer</h1>
+      <h1 className="text-base lg:text-4xl mb-4">Disclaimer</h1>
       <div>
         <ul className="list-disc mb-6">
           <li>You are relying on the information provided at your own risk.</li>

@@ -29,15 +29,15 @@ const Footer = () => {
           </a>
           ,{" "}
           <a
-            href="https://id.linkedin.com/in/wahyudwiwidharto"
+            href="https://twitter.com/wahyuwidharto"
             className="text-black underline"
           >
             Wahyu
           </a>
           , dan{" "}
-          <a href="/" className="text-black underline">
+          <span className="text-black">
             Lintang
-          </a>
+          </span>
           . Terinspirasi dari{" "}
           <a
             href="https://canigo.sg/"

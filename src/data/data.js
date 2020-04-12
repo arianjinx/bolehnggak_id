@@ -26,10 +26,10 @@ export default [
   },
   {
     id: 3,
-    slug: "pernikahan",
+    slug: "nikah",
     answerType: "success",
     answerTypeLabel: "Boleh",
-    activity: "Pernikahan",
+    activity: "Nikah",
     answer:
       "Pasal 17 PSBB\n" +
       "Boleh dilakukan di kantor catatan sipil atau KUA\n" +

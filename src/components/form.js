@@ -111,6 +111,11 @@ const Form = () => {
     }
   }
 
+  const BreakLine = styled.br`
+    content: "";
+    ${tw`mb-2 block`}
+  `
+
   return (
     <>
       <Helmet
@@ -123,14 +128,8 @@ const Form = () => {
         <div className="flex flex-row items-center">
           <div className="my-4 relative mr-4">
             <Box onClick={handleBoxClick}>
-              {selected ? (
-                <>
-                  {selected.activity}
-                  <IconTriangleWrapper src={IconTriangle} alt="" />
-                </>
-              ) : (
-                "__________"
-              )}
+              {selected ? selected.activity : <span className="font-normal text-gray-500">pilih aktivitas</span>}
+              <IconTriangleWrapper src={IconTriangle} alt="" />
             </Box>
             {isShowAutosuggest && (
               <Autosuggest
@@ -153,7 +152,14 @@ const Form = () => {
       {selected && (
         <div className="mb-6 max-w-3xl">
           <AnswerHeading>{selected.answerTypeLabel}</AnswerHeading>
-          <Answer>{selected.answer}</Answer>
+          <Answer>
+            {selected.answer.split("\n").map((item, idx) => (
+              <React.Fragment key={idx}>
+                {item}
+                <BreakLine />
+              </React.Fragment>
+            ))}
+          </Answer>
         </div>
       )}
     </>

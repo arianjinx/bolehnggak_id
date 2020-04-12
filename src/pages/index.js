@@ -15,7 +15,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Beranda" isHomePage />
-      <div className="container mx-auto px-6 lg:px-10 pt-10 lg:pt-40">
+      <div className="container mx-auto px-6 lg:px-10">
         <Intro>
           Yuk cari tau hal yang <strong className="font-semibold">boleh</strong>{" "}
           atau <strong className="font-semibold">nggak boleh</strong> dilakuin

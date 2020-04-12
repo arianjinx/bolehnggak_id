@@ -3,7 +3,7 @@ module.exports = {
     title: `Boleh Nggak __ ?`,
     description: `Yuk cari tau hal yang boleh atau nggak boleh dilakuin selama masa 
 Pembatasan Sosial Berskala Besar (PSBB).`,
-    author: `@gatsbyjs`,
+    author: `Arian, Wahyu, dan Lintang`,
   },
   plugins: [
     `gatsby-plugin-emotion`,
@@ -14,6 +14,17 @@ Pembatasan Sosial Berskala Besar (PSBB).`,
         google: {
           families: ["Inter:400,500,600"],
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: true,
+        develop: false,
+        tailwind: true,
+        ignore: ["form.css"],
+        whitelist: ["html", "body"],
+        whitelistPatternsChildren: [/^token/, /^pre/, /^code/],
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -36,15 +47,6 @@ Pembatasan Sosial Berskala Besar (PSBB).`,
         theme_color: `#242424`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
-    },
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        printRejected: true, // Print removed selectors and processed file names
-        develop: true, // Enable while using `gatsby develop`
-        tailwind: true,
-        ignore: ["form.css"],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

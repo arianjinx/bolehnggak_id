@@ -11,7 +11,10 @@ Pembatasan Sosial Berskala Besar (PSBB).`,
       options: {
         spreadsheetId: "16skDPETqaL8RXGsfhDtWsNLLtOabbE76Tfw_IzmR0Bg",
         worksheetTitle: "CROWDSOURCE",
-        credentials: require("./google-service-credential.json"),
+        credentials:
+          process.env.NODE_ENV === "production"
+            ? JSON.stringify(process.env.GOOGLE_SERVICE_CREDENTIALS)
+            : require("./google-service-credential.json"),
       },
     },
     `gatsby-plugin-emotion`,

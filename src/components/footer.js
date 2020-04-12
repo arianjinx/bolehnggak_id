@@ -35,9 +35,12 @@ const Footer = () => {
             Wahyu
           </a>
           , dan{" "}
-          <span className="text-black">
+          <a
+            href="https://id.linkedin.com/in/lintanggustika"
+            className="text-black underline"
+          >
             Lintang
-          </span>
+          </a>
           . Terinspirasi dari{" "}
           <a
             href="https://canigo.sg/"

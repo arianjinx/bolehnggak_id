@@ -27,7 +27,7 @@
 .react-autosuggest__container {
   @apply absolute left-0 block w-full flex flex-row;
   top: 100%;
-  margin-top: -2px;
+  margin-top: -3px;
 }
 
 .react-autosuggest__input {
@@ -58,7 +58,7 @@
 }
 
 .react-autosuggest__suggestions-container--open {
-  margin-top: -2px;
+  margin-top: -3px;
   top: 100%;
   display: block;
   position: absolute;

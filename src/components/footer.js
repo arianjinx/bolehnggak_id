@@ -7,7 +7,12 @@ const Footer = () => {
       <div className="container mx-auto px-6 lg:px-10 py-4 pt-10 text-sm">
         <div className="text-base sm:text-lg mb-4">
           Ada sesuatu yang kurang nggak?{" "}
-          <a href="/" className="underline">
+          <a
+            href="https://docs.google.com/spreadsheets/d/16skDPETqaL8RXGsfhDtWsNLLtOabbE76Tfw_IzmR0Bg/edit?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
             bantu nambahin konten disini
           </a>
         </div>
@@ -16,11 +21,17 @@ const Footer = () => {
         </Link>
         <div className="text-gray-500">
           © {new Date().getFullYear()}, Hasil gabut dari{" "}
-          <a href="/" className="text-black underline">
+          <a
+            href="https://id.linkedin.com/in/arianpradana"
+            className="text-black underline"
+          >
             Arian
           </a>
           ,{" "}
-          <a href="/" className="text-black underline">
+          <a
+            href="https://id.linkedin.com/in/wahyudwiwidharto"
+            className="text-black underline"
+          >
             Wahyu
           </a>
           , dan{" "}
@@ -28,7 +39,12 @@ const Footer = () => {
             Lintang
           </a>
           . Terinspirasi dari{" "}
-          <a href="/" className="text-black underline">
+          <a
+            href="https://canigo.sg/"
+            target="_blank"
+            className="text-black underline"
+            rel="noopener noreferrer"
+          >
             canigo.sg
           </a>
         </div>

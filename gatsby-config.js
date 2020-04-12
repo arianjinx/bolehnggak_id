@@ -1,8 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Boleh Nggak __ ?`,
-    description: `Yuk cari tau hal yang boleh atau nggak boleh dilakuin selama masa 
-Pembatasan Sosial Berskala Besar (PSBB).`,
+    description: `Hal yang boleh atau nggak boleh dilakuin saat PSBB COVID-19.`,
     author: `Arian, Wahyu, dan Lintang`,
   },
   plugins: [

@@ -19,6 +19,11 @@ const Layout = ({ children }) => {
   )
 }
 
+console.log(
+  "%c corona jancok ndang minggato ",
+  "background: #fed7d7; color: #000; font-size: 32px;"
+)
+
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }

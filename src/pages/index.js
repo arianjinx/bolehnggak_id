@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
-import IconRefresh from "../images/icon-refresh.svg"
 import Form from "../components/form"
 
 const IndexPage = () => {
@@ -22,10 +21,6 @@ const IndexPage = () => {
           selama masa Pembatasan Sosial Berskala Besar (PSBB)
         </Intro>
         <Form />
-        <a href="/" className="inline-block underline clearfix">
-          <img src={IconRefresh} alt="" className="inline-block mr-2" />
-          Acak pertanyaan
-        </a>
       </div>
     </Layout>
   )

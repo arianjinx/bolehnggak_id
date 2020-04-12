@@ -49,8 +49,7 @@
 }
 
 .react-autosuggest__input--open {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  border-radius: 0;
 }
 
 .react-autosuggest__suggestions-container {

@@ -30,11 +30,14 @@
 }
 
 .react-autosuggest__input {
-  @apply py-3 px-4 w-full items-start;
+  @apply py-2 px-3 w-full items-start;
   font-weight: 400;
   font-size: 16px;
   background: #ffffff;
   border: 1px solid #bdbdbd;
+  @screen lg {
+    @apply px-4 py-3;
+  }
 }
 
 .react-autosuggest__input--focused {
@@ -77,8 +80,11 @@
 }
 
 .react-autosuggest__suggestion {
-  @apply py-3 px-4 cursor-pointer flex flex-row items-center;
   font-weight: 400;
+  @apply py-2 px-3 cursor-pointer flex flex-row items-center;
+  @screen lg {
+    @apply px-4 py-3;
+  }
 }
 
 .react-autosuggest__suggestion--highlighted {

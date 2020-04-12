@@ -5,6 +5,7 @@ import { escapeRegexCharacters } from "../utils/utils"
 import "./form.css"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
+import theme from "../utils/tailwind.helpers"
 import IconTriangle from "../images/icon-triangle.svg"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
@@ -90,23 +91,36 @@ const Form = () => {
   }
 
   const Box = styled.div`
-    ${tw`font-bold cursor-pointer flex items-center bg-white rounded box-border border-solid border border-gray-500 px-6 py-2 justify-center select-none`}
-    min-width: 150px;
+    ${tw`font-bold cursor-pointer flex items-center bg-white rounded box-border border-solid border border-gray-500 px-3 lg:px-6 py-2 justify-center select-none`}
+    min-width: 140px;
+    @media (min-width: ${theme.screens.lg}) {
+      min-width: 304px;
+    }
     ${isShowAutosuggest && tw`rounded-b-none`}
   `
 
   const AnswerHeading = styled.h2`
-    ${tw`text-3xl lg:text-4xl font-bold mb-3 lg:mb-6`};
+    ${tw`text-base lg:text-4xl font-bold mb-3 lg:mb-6`};
   `
 
   const Answer = styled.p`
-    ${tw`text-lg text-gray-700`};
+    ${tw`text-base text-gray-700`};
   `
 
   const IconTriangleWrapper = styled.img`
-    ${tw`inline-block ml-4`};
+    width: 8px;
+    @media (min-width: ${theme.screens.lg}) {
+      width: 16px;
+    }
+
+    ${tw`inline-block ml-3 lg:ml-4`};
 
     ${isShowAutosuggest && `transform: rotate(180deg);`}
+  `
+
+  const BreakLine = styled.br`
+    content: "";
+    ${tw`mb-1 lg:mb-2 block`}
   `
 
   const bgStatusToggler = () => {
@@ -125,12 +139,6 @@ const Form = () => {
         break
     }
   }
-
-  const BreakLine = styled.br`
-    content: "";
-    ${tw`mb-2 block`}
-  `
-
   return (
     <>
       <Helmet
@@ -138,10 +146,10 @@ const Form = () => {
           class: bgStatusToggler(),
         }}
       />
-      <div className="flex flex-row items-center font-medium flex-wrap text-3xl lg:text-4xl">
+      <div className="flex flex-row items-center font-medium flex-wrap text-base lg:text-4xl">
         <div className="mr-4 leading-tight ">Boleh nggak aku</div>
         <div className="flex flex-row items-center">
-          <div className="my-4 relative mr-4">
+          <div className="my-3 lg:my-4 relative mr-4">
             <Box onClick={handleBoxClick}>
               {selected ? (
                 selected.activity

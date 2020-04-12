@@ -54,7 +54,7 @@ Pembatasan Sosial Berskala Besar (PSBB).`,
         name: `Boleh Nggak __ ?`,
         short_name: `bolehnggakid`,
         start_url: `/`,
-        background_color: `#fffff`,
+        background_color: `#ffffff`,
         theme_color: `#242424`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.

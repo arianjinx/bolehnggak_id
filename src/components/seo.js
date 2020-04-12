@@ -60,7 +60,12 @@ function SEO({ description, lang, meta, title, isHomePage }) {
         },
         {
           property: `og:image`,
+          itemprop: `image`,
           content: site.siteMetadata.url + ogImage,
+        },
+        {
+          property: `og:image:secure_url`,
+          content: site.siteMetadata.secureUrl + ogImage,
         },
         {
           property: `og:image:width`,

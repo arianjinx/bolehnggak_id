@@ -1,34 +1,49 @@
 import React, { useState } from "react"
 import isMobile from "ismobilejs"
 import Autosuggest from "react-autosuggest"
-import data from "../data/data"
 import { escapeRegexCharacters } from "../utils/utils"
 import "./form.css"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
 import IconTriangle from "../images/icon-triangle.svg"
 import { Helmet } from "react-helmet"
-
-const getSuggestions = value => {
-  const escapedValue = escapeRegexCharacters(value.trim())
-
-  if (escapedValue === "") {
-    return data
-  }
-
-  const regex = new RegExp(escapedValue, "i")
-  return data.filter(item => regex.test(item.activity))
-}
-
-const getSuggestionValue = suggestion => suggestion.activity
-
-const renderSuggestion = suggestion => <span>{suggestion.activity}</span>
+import { useStaticQuery, graphql } from "gatsby"
 
 const Form = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allGoogleSheetCrowdsourceRow {
+        nodes {
+          id
+          slug
+          answertype
+          answertypelabel
+          activity
+          answer
+        }
+      }
+    }
+  `).allGoogleSheetCrowdsourceRow.nodes
+
   const [isShowAutosuggest, setIsShowAutosuggest] = useState(false)
   const [value, setValue] = useState("")
   const [selected, setSelected] = useState(null)
   const [suggestions, setSuggestions] = useState(data)
+
+  const getSuggestions = value => {
+    const escapedValue = escapeRegexCharacters(value.trim())
+
+    if (escapedValue === "") {
+      return data
+    }
+
+    const regex = new RegExp(escapedValue, "i")
+    return data.filter(item => regex.test(item.activity))
+  }
+
+  const getSuggestionValue = suggestion => suggestion.activity
+
+  const renderSuggestion = suggestion => <span>{suggestion.activity}</span>
 
   const onBlur = () => {
     setIsShowAutosuggest(false)
@@ -99,7 +114,7 @@ const Form = () => {
       return "bg-white"
     }
 
-    switch (selected.answerType) {
+    switch (selected.answertype) {
       case "success":
         return "bg-green-200"
       case "warning":
@@ -128,7 +143,13 @@ const Form = () => {
         <div className="flex flex-row items-center">
           <div className="my-4 relative mr-4">
             <Box onClick={handleBoxClick}>
-              {selected ? selected.activity : <span className="font-normal text-gray-500">pilih aktivitas</span>}
+              {selected ? (
+                selected.activity
+              ) : (
+                <span className="font-normal text-gray-500">
+                  pilih aktivitas
+                </span>
+              )}
               <IconTriangleWrapper src={IconTriangle} alt="" />
             </Box>
             {isShowAutosuggest && (
@@ -151,7 +172,7 @@ const Form = () => {
       </div>
       {selected && (
         <div className="mb-6 max-w-3xl">
-          <AnswerHeading>{selected.answerTypeLabel}</AnswerHeading>
+          <AnswerHeading>{selected.answertypelabel}</AnswerHeading>
           <Answer>
             {selected.answer.split("\n").map((item, idx) => (
               <React.Fragment key={idx}>

@@ -6,6 +6,14 @@ Pembatasan Sosial Berskala Besar (PSBB).`,
     author: `Arian, Wahyu, dan Lintang`,
   },
   plugins: [
+    {
+      resolve: "gatsby-source-google-sheets",
+      options: {
+        spreadsheetId: "16skDPETqaL8RXGsfhDtWsNLLtOabbE76Tfw_IzmR0Bg",
+        worksheetTitle: "CROWDSOURCE",
+        credentials: require("./google-service-credential.json"),
+      },
+    },
     `gatsby-plugin-emotion`,
     `gatsby-plugin-postcss`,
     {

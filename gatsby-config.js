@@ -2,11 +2,15 @@ module.exports = {
   siteMetadata: {
     title: `Boleh Nggak __ ?`,
     description: `Hal yang boleh atau nggak boleh dilakuin saat PSBB COVID-19.`,
-    url: `http://bolehnggak.id`,
+    author: `Arian, Wahyu, Aswin, Rara, dan Lintang`,
+    url: `https://bolehnggak.id`,
     secureUrl: `https://bolehnggak.id`,
     canonical: `https://bolehnggak.id/`,
-    author: `Arian, Wahyu, dan Lintang`,
     fbAppId: `909503169491208`,
+    ogImageWidth: "1200",
+    ogImageHeight: "630",
+    twitterSite: "@bolehnggak_id",
+    twitterCreator: "@arianjinx",
   },
   plugins: [
     {
@@ -36,8 +40,7 @@ module.exports = {
         printRejected: true,
         develop: false,
         tailwind: true,
-        ignore: ["form.css"],
-        whitelist: ["html", "body"],
+        ignore: ["src/components/form.css"],
         whitelistPatternsChildren: [/^token/, /^pre/, /^code/],
       },
     },
@@ -55,16 +58,13 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Boleh Nggak __ ?`,
-        short_name: `bolehnggakid`,
+        short_name: `bolehnggak_id`,
         start_url: `/`,
-        background_color: `#ffffff`,
+        background_color: `#fff`,
         theme_color: `#242424`,
         display: `minimal-ui`,
-        icon: `src/images/bolehnggak-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/bolehnggak_id-icon.png`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }

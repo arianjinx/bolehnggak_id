@@ -9,7 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import ogImage from "../images/bolehnggak-og.png"
+import ogImage from "../images/bolehnggak_id-og.png"
 
 function SEO({ description, lang, meta, title, isHomePage }) {
   const { site } = useStaticQuery(
@@ -24,6 +24,10 @@ function SEO({ description, lang, meta, title, isHomePage }) {
             secureUrl
             canonical
             fbAppId
+            ogImageWidth
+            ogImageHeight
+            twitterSite
+            twitterCreator
           }
         }
       }
@@ -47,8 +51,12 @@ function SEO({ description, lang, meta, title, isHomePage }) {
           content: metaDescription,
         },
         {
-          name: `image`,
-          content: site.siteMetadata.url + ogImage,
+          property: `og:url`,
+          content: site.siteMetadata.canonical,
+        },
+        {
+          property: `og:type`,
+          content: `website`,
         },
         {
           property: `og:title`,
@@ -65,23 +73,15 @@ function SEO({ description, lang, meta, title, isHomePage }) {
         },
         {
           property: `og:image:secure_url`,
-          content: site.siteMetadata.secureUrl + ogImage,
+          content: site.siteMetadata.url + ogImage,
         },
         {
           property: `og:image:width`,
-          content: "1200",
+          content: site.siteMetadata.ogImageWidth,
         },
         {
           property: `og:image:height`,
-          content: "630",
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          property: `og:url`,
-          content: site.siteMetadata.canonical,
+          content: site.siteMetadata.ogImageHeight,
         },
         {
           property: `fb:app_id`,
@@ -89,15 +89,19 @@ function SEO({ description, lang, meta, title, isHomePage }) {
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: `summary_large_image`,
+        },
+        {
+          name: `twitter:site`,
+          content: site.siteMetadata.twitterSite,
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: site.siteMetadata.twitterCreator,
         },
         {
-          name: `twitter:image`,
-          content: site.siteMetadata.url + ogImage,
+          name: `twitter:url`,
+          content: site.siteMetadata.url,
         },
         {
           name: `twitter:title`,
@@ -106,6 +110,10 @@ function SEO({ description, lang, meta, title, isHomePage }) {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `twitter:image`,
+          content: site.siteMetadata.url + ogImage,
         },
       ].concat(meta)}
     />

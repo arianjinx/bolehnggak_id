@@ -7,17 +7,17 @@ const React = require("react")
 
 exports.onPreRenderHTML = ({ getHeadComponents, replaceHeadComponents }) => {
   const headComponents = getHeadComponents()
-  headComponents.sort((a, b) => {
-    if (a.type === "meta") {
-      return -1
-    } else if (b.type === "meta") {
+  headComponents
+    .sort(a => {
+      if (a.props && a.props["data-react-helmet"]) {
+        return 0
+      }
       return 1
-    }
-    return 0
-  }).forEach(head => {
-    if (head.props && head.props["data-react-helmet"]) {
-      delete head.props["data-react-helmet"]
-    }
-  })
+    })
+    .forEach(head => {
+      if (head.props && head.props["data-react-helmet"]) {
+        delete head.props["data-react-helmet"]
+      }
+    })
   replaceHeadComponents(headComponents)
 }

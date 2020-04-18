@@ -7,23 +7,29 @@ import tw from "twin.macro"
 import Form from "../components/form"
 
 const IndexPage = () => {
+  const InnerContainer = styled.div`
+    ${tw`px-6 lg:px-10`}
+  `
   const Intro = styled.p`
     ${tw`text-base lg:text-xl max-w-xl mb-4 lg:mb-6`}
+
+    strong {
+      ${tw`font-bold`}
+    }
   `
 
   return (
     <Layout>
-      <SEO
-          title="Boleh Nggak ___ ?"
-          isHomePage
-      />
-      <div className="container mx-auto px-6 lg:px-10">
-        <Intro>
-          Yuk cari tau hal yang <strong className="font-semibold">boleh</strong>{" "}
-          atau <strong className="font-semibold">nggak boleh</strong> dilakuin
-          selama masa Pembatasan Sosial Berskala Besar (PSBB)
-        </Intro>
-        <Form />
+      <SEO isHomePage />
+      <div className="container mx-auto">
+        <InnerContainer>
+          <Intro>
+            Yuk cari tau hal yang <strong>boleh</strong> atau{" "}
+            <strong>nggak boleh</strong> dilakuin selama masa Pembatasan Sosial
+            Berskala Besar (PSBB)
+          </Intro>
+          <Form />
+        </InnerContainer>
       </div>
     </Layout>
   )

@@ -14,8 +14,7 @@ exports.onPreRenderHTML = ({ getHeadComponents, replaceHeadComponents }) => {
       return 1
     }
     return 0
-  })
-  headComponents.forEach(head => {
+  }).forEach(head => {
     if (head.props && head.props["data-react-helmet"]) {
       delete head.props["data-react-helmet"]
     }

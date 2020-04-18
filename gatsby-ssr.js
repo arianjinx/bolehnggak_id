@@ -1,14 +1,11 @@
-const React = require("react");
+const React = require("react")
 /**
  * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
  *
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
  */
 
-export const onPreRenderHTML = ({
-  getHeadComponents,
-  replaceHeadComponents,
-}) => {
+exports.onPreRenderHTML = ({ getHeadComponents, replaceHeadComponents }) => {
   const headComponents = getHeadComponents()
   headComponents.sort((a, b) => {
     if (a.type === "meta") {
@@ -18,7 +15,6 @@ export const onPreRenderHTML = ({
     }
     return 0
   })
-  replaceHeadComponents(headComponents)
   headComponents.forEach(head => {
     if (head.props && head.props["data-react-helmet"]) {
       delete head.props["data-react-helmet"]

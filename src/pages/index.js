@@ -20,7 +20,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO isHomePage />
+      <SEO title="Beranda" isHomePage />
       <div className="container mx-auto">
         <InnerContainer>
           <Intro>

@@ -5,17 +5,6 @@ const Footer = () => {
   return (
     <footer>
       <div className="container mx-auto px-6 lg:px-10 py-4 pt-10 text-sm">
-        <div className="text-base sm:text-lg mb-4">
-          Ada sesuatu yang kurang nggak?{" "}
-          <a
-            href="https://docs.google.com/spreadsheets/d/16skDPETqaL8RXGsfhDtWsNLLtOabbE76Tfw_IzmR0Bg/edit?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline"
-          >
-            bantu nambahin konten disini
-          </a>
-        </div>
         <Link to="/disclaimer/" className="text-black underline uppercase">
           Disclaimer →
         </Link>

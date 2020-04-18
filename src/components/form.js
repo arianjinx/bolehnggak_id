@@ -13,6 +13,7 @@ import IconRefresh from "../images/icon-refresh.svg"
 import IconSucces from "../images/icon-success.svg"
 import IconWarning from "../images/icon-warning.svg"
 import IconAlert from "../images/icon-alert.svg"
+import RandomizeButton from "./randomize-button"
 
 const Form = () => {
   const data = useStaticQuery(graphql`
@@ -193,10 +194,10 @@ const Form = () => {
           class: bgStatusToggler(),
         }}
       />
-      <div className="flex flex-row items-center font-medium flex-wrap text-base lg:text-4xl">
+      <div className="flex flex-row items-center font-medium flex-wrap text-base">
         <div className="mr-4 leading-tight ">Boleh nggak aku</div>
         <div className="flex flex-row items-center">
-          <div className="my-3 lg:my-4 relative mr-4">
+          <div className="my-3 relative mr-4">
             <Box onClick={handleBoxClick}>
               {selected ? (
                 selected.activity
@@ -226,7 +227,7 @@ const Form = () => {
         </div>
       </div>
       {selected && (
-        <div className="mb-6 max-w-3xl">
+        <div className="hidden mb-6 max-w-3xl">
           <AnswerHeading>
             {selected.answertypelabel}
             <IconStatus src={iconStatusToggler()} alt="" />
@@ -258,13 +259,7 @@ const Form = () => {
           </Answer>
         </div>
       )}
-      <button
-        className="inline-block underline clearfix outline-none focus:outline-none"
-        onClick={handleRandomize}
-      >
-        <img src={IconRefresh} alt="" className="inline-block mr-2" />
-        Acak pertanyaan
-      </button>
+      <RandomizeButton onClick={handleRandomize} />
     </>
   )
 }

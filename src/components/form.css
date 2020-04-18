@@ -1,27 +1,27 @@
 ::-webkit-input-placeholder {
-  color: theme("colors.gray.500");
+  color: #BDBDBD;
 }
 
 :-moz-placeholder {
-  color: theme("colors.gray.500");
+  color: #BDBDBD;
   opacity: 1;
 }
 
 ::-moz-placeholder {
-  color: theme("colors.gray.500");
+  color: #BDBDBD;
   opacity: 1;
 }
 
 :-ms-input-placeholder {
-  color: theme("colors.gray.500");
+  color: #BDBDBD;
 }
 
 ::-ms-input-placeholder {
-  color: theme("colors.gray.500");
+  color: #BDBDBD;
 }
 
 ::placeholder {
-  color: theme("colors.gray.500");
+  color: #BDBDBD;
 }
 
 .react-autosuggest__container {
@@ -35,7 +35,8 @@
   font-weight: 400;
   font-size: 16px;
   background: #ffffff;
-  border: 1px solid #bdbdbd;
+  border: 1px solid #232831;
+  border-radius: 2px;
   @screen lg {
     @apply px-4 py-3;
   }
@@ -63,7 +64,7 @@
   display: block;
   position: absolute;
   width: 100%;
-  border: 1px solid #bdbdbd;
+  border: 1px solid #232831;
   background-color: #fff;
   font-size: 16px;
   border-bottom-left-radius: 4px;
@@ -93,7 +94,7 @@
 }
 
 .react-autosuggest__section-container {
-  border-top: 1px dashed #bdbdbd;
+  border-top: 1px dashed #232831;
 }
 
 .react-autosuggest__section-container--first {

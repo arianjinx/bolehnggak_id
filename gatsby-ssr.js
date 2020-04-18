@@ -12,6 +12,5 @@ exports.onPreRenderHTML = ({ getHeadComponents, replaceHeadComponents }) => {
       delete head.props["data-react-helmet"]
     }
   })
-  const newHeadComponents = headComponents
-  replaceHeadComponents(newHeadComponents)
+  replaceHeadComponents(headComponents)
 }

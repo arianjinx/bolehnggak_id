@@ -1,9 +1,10 @@
 import React from "react"
+import { FormattedMessage, useIntl } from "react-intl"
+import styled from "@emotion/styled"
+import tw from "twin.macro"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import styled from "@emotion/styled"
-import tw from "twin.macro"
 import Form from "../components/form"
 
 const IndexPage = () => {
@@ -17,16 +18,24 @@ const IndexPage = () => {
       ${tw`font-bold`}
     }
   `
+  const { formatMessage: f } = useIntl()
+  console.log(
+    `%c ${f({ id: "homepage.console_log" })}`,
+    "background: #fed7d7; color: #000; font-size: 32px;"
+  )
 
   return (
     <Layout>
-      <SEO title="Beranda" isHomePage />
+      <SEO title={f({ id: "homepage.title" })} isHomePage />
       <div className="container mx-auto">
         <InnerContainer>
           <Intro>
-            Yuk cari tau hal yang <strong>boleh</strong> atau{" "}
-            <strong>nggak boleh</strong> dilakuin selama masa Pembatasan Sosial
-            Berskala Besar (PSBB)
+            <FormattedMessage
+              id="homepage.intro"
+              values={{
+                bold: (...chunks) => <strong>{chunks}</strong>,
+              }}
+            />
           </Intro>
           <Form />
         </InnerContainer>

@@ -6,12 +6,12 @@ const React = require("react")
  */
 
 exports.onPreRenderHTML = ({ getHeadComponents, replaceHeadComponents }) => {
-  const headComponents = getHeadComponents()
-  replaceHeadComponents(
-    headComponents.forEach(head => {
-      if (head.props && head.props["data-react-helmet"]) {
-        delete head.props["data-react-helmet"]
-      }
-    })
-  )
+  let headComponents = getHeadComponents()
+  headComponents.forEach(head => {
+    if (head.props && head.props["data-react-helmet"]) {
+      delete head.props["data-react-helmet"]
+    }
+  })
+  const newHeadComponents = headComponents
+  replaceHeadComponents(newHeadComponents)
 }

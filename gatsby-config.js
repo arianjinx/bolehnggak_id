@@ -14,6 +14,15 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        path: `${__dirname}/src/translations`,
+        languages: [`id`],
+        defaultLanguage: `id`,
+        redirect: false,
+      },
+    },
+    {
       resolve: "gatsby-source-google-sheets",
       options: {
         spreadsheetId: "16skDPETqaL8RXGsfhDtWsNLLtOabbE76Tfw_IzmR0Bg",
@@ -26,24 +35,6 @@ module.exports = {
     },
     `gatsby-plugin-emotion`,
     `gatsby-plugin-postcss`,
-    {
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        google: {
-          families: ["Inter:400,500,600"],
-        },
-      },
-    },
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        printRejected: true,
-        develop: false,
-        tailwind: true,
-        ignore: ["src/containers/SelectBoxContainer/SelectBoxContainer.css"],
-        whitelistPatternsChildren: [/^token/, /^pre/, /^code/],
-      },
-    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -67,12 +58,21 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-intl`,
+      resolve: `gatsby-plugin-purgecss`,
       options: {
-        path: `${__dirname}/src/translations`,
-        languages: [`id`],
-        defaultLanguage: `id`,
-        redirect: false,
+        printRejected: true,
+        develop: false,
+        tailwind: true,
+        ignore: ["src/containers/SelectBoxContainer/SelectBoxContainer.css"],
+        whitelistPatternsChildren: [/^token/, /^pre/, /^code/],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: ["Inter:400,500,600"],
+        },
       },
     },
   ],

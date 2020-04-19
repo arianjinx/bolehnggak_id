@@ -35,13 +35,14 @@ function SEO({ description, lang, meta, title, isHomePage }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const metaTitle = isHomePage ? site.siteMetadata.title : title
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={isHomePage ? site.siteMetadata.title : title}
+      title={metaTitle}
       titleTemplate={
         isHomePage ? site.siteMetadata.title : `${site.siteMetadata.title} | %s`
       }
@@ -60,7 +61,7 @@ function SEO({ description, lang, meta, title, isHomePage }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           property: `og:description`,
@@ -105,7 +106,7 @@ function SEO({ description, lang, meta, title, isHomePage }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           name: `twitter:description`,

@@ -1,5 +1,5 @@
 import React from "react"
-import { useIntl } from "react-intl"
+import { FormattedMessage, useIntl } from "react-intl"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
@@ -12,7 +12,7 @@ const DisclaimerPage = () => {
       <SEO title={f({ id: "disclaimer.title" })} />
       <div className="container mx-auto px-6 lg:px-10 py-4 pt-10 text-sm">
         <h1 className="text-base lg:text-4xl mb-4">
-          {f({ id: "disclaimer.title" })}
+          <FormattedMessage id="disclaimer.title" />
         </h1>
         <div>
           <ul className="list-disc mb-6 pl-4">

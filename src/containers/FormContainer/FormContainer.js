@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import "./FormContainer.css"
+import "../SelectBoxContainer/SelectBoxContainer.css"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
 import { Helmet } from "react-helmet"

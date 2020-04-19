@@ -4,11 +4,14 @@ import { Link } from "gatsby"
 const Footer = () => {
   return (
     <footer>
-      <div className="container mx-auto px-6 lg:px-10 py-4 pt-10 text-sm">
-        <Link to="/disclaimer/" className="text-black underline uppercase">
+      <div className="container mx-auto px-6 py-4 pt-10 text-sm">
+        <Link
+          to="/disclaimer/"
+          className="text-xs text-black underline uppercase"
+        >
           Disclaimer →
         </Link>
-        <div className="text-gray-500">
+        <div className="text-xs text-gray-500">
           © {new Date().getFullYear()}, Hasil gabut dari{" "}
           <a
             href="https://id.linkedin.com/in/arianpradana"
@@ -22,6 +25,14 @@ const Footer = () => {
             className="text-black underline"
           >
             Wahyu
+          </a>
+          ,
+          <a href="/" className="text-black underline">
+            Aswin
+          </a>
+          ,
+          <a href="/" className="text-black underline">
+            Rara
           </a>
           , dan{" "}
           <a

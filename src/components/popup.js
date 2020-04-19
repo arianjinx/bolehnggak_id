@@ -65,7 +65,7 @@ const Button = styled.button`
   }
 `
 
-const Popup = (props) => {
+const Popup = props => {
   return (
     <Wrapper className={props.className}>
       <Box>

@@ -4,7 +4,7 @@ import tw from "twin.macro"
 import { FormattedMessage } from "react-intl"
 
 const Container = styled.div`
-  ${tw`text-xs sm:text-lg mb-4 mx-auto w-full p-2 box-border`}
+  ${tw`text-xs mb-4 mx-auto w-full p-2 box-border`}
   box-shadow: 4px 4px 0px 0px rgba(35, 40, 49, 1);
   width: 100%;
   max-width: 210px;

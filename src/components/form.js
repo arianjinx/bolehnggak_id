@@ -5,14 +5,9 @@ import { escapeRegexCharacters } from "../utils/utils"
 import "./form.css"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
-import theme from "../utils/tailwind.helpers"
 import IconTriangle from "../images/icon-triangle.svg"
 import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
-import IconRefresh from "../images/icon-refresh.svg"
-import IconSucces from "../images/icon-success.svg"
-import IconWarning from "../images/icon-warning.svg"
-import IconAlert from "../images/icon-alert.svg"
+import { graphql, useStaticQuery } from "gatsby"
 import RandomizeButton from "./randomize-button"
 
 const Form = () => {
@@ -97,30 +92,24 @@ const Form = () => {
 
   const Box = styled.div`
     ${tw`
-    font-bold 
     cursor-pointer 
     flex items-center 
     bg-white 
-    rounded 
     box-border 
-    border-solid 
-    border 
-    border-gray-500 
     px-3 
-    lg:px-6 
     py-2 
     justify-center 
     select-none
     `}
     min-width: 140px;
-    @media (min-width: ${theme.screens.lg}) {
-      min-width: 290px;
-    }
-    ${isShowAutosuggest && tw`rounded-b-none`}
+    border: 1px solid #232831;
+    border-radius: 2px;
+    color: ${selected ? "#232831" : "#54D8B8"};
+    ${isShowAutosuggest && tw`rounded-b-none`};
   `
 
   const AnswerHeading = styled.h2`
-    ${tw`text-base lg:text-4xl font-bold mb-3 lg:mb-6`};
+    ${tw`text-base font-bold mb-3 `};
   `
 
   const Answer = styled.p`
@@ -129,27 +118,15 @@ const Form = () => {
 
   const IconTriangleWrapper = styled.img`
     width: 8px;
-    @media (min-width: ${theme.screens.lg}) {
-      width: 16px;
-    }
 
-    ${tw`inline-block ml-3 lg:ml-4`};
+    ${tw`inline-block ml-3`};
 
     ${isShowAutosuggest && `transform: rotate(180deg);`}
   `
 
   const BreakLine = styled.br`
     content: "";
-    ${tw`mb-1 lg:mb-2 block`}
-  `
-
-  const IconStatus = styled.img`
-    width: 16px;
-    @media (min-width: ${theme.screens.lg}) {
-      width: 30px;
-    }
-
-    ${tw`inline-block ml-3 lg:ml-4 -mt-1 align-middle`};
+    ${tw`mb-1 block`}
   `
 
   const bgStatusToggler = () => {
@@ -169,21 +146,8 @@ const Form = () => {
     }
   }
 
-  const iconStatusToggler = () => {
-    switch (selected.answertype) {
-      case "success":
-        return IconSucces
-      case "warning":
-        return IconWarning
-      case "alert":
-        return IconAlert
-      default:
-        break
-    }
-  }
-
   const handleRandomize = () => {
-    const randomId = Math.floor(Math.random() * (data.length - 0)) + 0
+    const randomId = Math.floor(Math.random() * (data.length - 0))
     setSelected(data[randomId])
   }
 
@@ -194,18 +158,12 @@ const Form = () => {
           class: bgStatusToggler(),
         }}
       />
-      <div className="flex flex-row items-center font-medium flex-wrap text-base">
-        <div className="mr-4 leading-tight ">Boleh nggak aku</div>
+      <div className="flex flex-row items-center font-medium flex-wrap text-base justify-center">
+        <div className="mr-4 leading-tight ">Boleh nggak</div>
         <div className="flex flex-row items-center">
           <div className="my-3 relative mr-4">
             <Box onClick={handleBoxClick}>
-              {selected ? (
-                selected.activity
-              ) : (
-                <span className="font-normal text-gray-500">
-                  pilih aktivitas
-                </span>
-              )}
+              {selected ? selected.activity : "pilih aktivitas"}
               <IconTriangleWrapper src={IconTriangle} alt="" />
             </Box>
             {isShowAutosuggest && (
@@ -227,11 +185,8 @@ const Form = () => {
         </div>
       </div>
       {selected && (
-        <div className="hidden mb-6 max-w-3xl">
-          <AnswerHeading>
-            {selected.answertypelabel}
-            <IconStatus src={iconStatusToggler()} alt="" />
-          </AnswerHeading>
+        <div className="mb-6 mx-auto max-w-3xl text-center">
+          <AnswerHeading>{selected.answertypelabel}</AnswerHeading>
           <Answer>
             {!selected.answercontent &&
               selected.answer.split("\n").map((item, idx) => (
@@ -247,15 +202,6 @@ const Form = () => {
                   <BreakLine />
                 </React.Fragment>
               ))}
-            <a
-              href={selected.reference}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline text-black font-semibold text-sm lg:text-base clearfix outline-none focus:outline-none"
-              onClick={handleRandomize}
-            >
-              Link rujukan
-            </a>
           </Answer>
         </div>
       )}

@@ -1,19 +1,15 @@
 import React from "react"
-import { FormattedMessage, useIntl } from "react-intl"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const DisclaimerPage = () => {
-  const { formatMessage: f } = useIntl()
   return (
     <Layout>
-      <SEO title={f({ id: "disclaimer.title" })} />
+      <SEO title="Disclaimer" />
       <div className="container mx-auto px-6 lg:px-10 py-4 pt-10 text-sm">
-        <h1 className="text-base lg:text-4xl mb-4">
-          <FormattedMessage id="disclaimer.title" />
-        </h1>
+        <h1 className="text-base lg:text-4xl mb-4">Disclaimer</h1>
         <div>
           <ul className="list-disc mb-6 pl-4">
             <li>

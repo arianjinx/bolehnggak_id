@@ -1,27 +1,27 @@
 ::-webkit-input-placeholder {
-  color: #BDBDBD;
+  color: #bdbdbd;
 }
 
 :-moz-placeholder {
-  color: #BDBDBD;
+  color: #bdbdbd;
   opacity: 1;
 }
 
 ::-moz-placeholder {
-  color: #BDBDBD;
+  color: #bdbdbd;
   opacity: 1;
 }
 
 :-ms-input-placeholder {
-  color: #BDBDBD;
+  color: #bdbdbd;
 }
 
 ::-ms-input-placeholder {
-  color: #BDBDBD;
+  color: #bdbdbd;
 }
 
 ::placeholder {
-  color: #BDBDBD;
+  color: #bdbdbd;
 }
 
 .react-autosuggest__container {
@@ -37,9 +37,6 @@
   background: #ffffff;
   border: 1px solid #232831;
   border-radius: 2px;
-  @screen lg {
-    @apply px-4 py-3;
-  }
 }
 
 .react-autosuggest__input--focused {
@@ -77,15 +74,14 @@
   padding: 0;
   list-style-type: none;
   overflow-y: auto;
-  max-height: 216px;
+  max-height: 210px;
+  text-align: left;
+  word-break: break-word;
 }
 
 .react-autosuggest__suggestion {
   font-weight: 400;
   @apply py-2 px-3 cursor-pointer flex flex-row items-center;
-  @screen lg {
-    @apply px-4 py-3;
-  }
 }
 
 .react-autosuggest__suggestion--highlighted {

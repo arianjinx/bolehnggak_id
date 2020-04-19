@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
-import { FormattedMessage } from "react-intl"
+import { FormattedMessage } from "gatsby-plugin-intl"
 
 const Wrapper = styled.div`
   ${tw`fixed w-full h-full top-0 left-0 p-6`}

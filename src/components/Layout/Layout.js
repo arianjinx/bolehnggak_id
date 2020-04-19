@@ -9,15 +9,15 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
-import Footer from "./footer"
-import "./layout.css"
+import Footer from "../Footer/Footer"
+import "./Layout.css"
 
 const Wrapper = styled.div`
   ${tw`flex flex-col min-h-screen`}
 `
 
 const Main = styled.div`
-  ${tw`flex-grow pt-10 lg:pt-24`}
+  ${tw`flex-grow flex`}
 `
 
 const Layout = ({ children }) => {

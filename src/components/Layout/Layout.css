@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  transition: 0.25s ease background-color;
+  background: url("../../images/bg-tiles.png") white repeat;
+}
+
+.can {
+  background-color: #e7f3e5;
+}
+
+.can-but {
+  background-color: #fff8d3;
+}
+
+.can-not {
+  background-color: #ffecec;
+}

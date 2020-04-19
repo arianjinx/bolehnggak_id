@@ -7,8 +7,17 @@
   "homepage.choose_activity": "Pilih Aktivitas",
   "homepage.question_mark": "?",
   "homepage.randomize_questions": "Acak Pertanyaan",
-  "homepage.contribution": "Ada sesuatu yang kurang nggak? <link>bantu nambahin konten disini</link>",
-  "homepage.console_log": "corona ndang minggato please",
-  "footer.copyright": "2020. <link-team>Tim BolehNggak.ID</link-team>. Cuci tangan yang sering ya, guys!. Terinspirasi dari <link-can-i-go>canigo.sg</link-can-i-go>",
-  "disclaimer.title": "Disclaimer"
+  "common.contribution": "Ada sesuatu yang kurang nggak? <anchor>bantu nambahin konten disini</anchor>",
+  "common.console_log": "corona ndang minggato please",
+  "common.copyright": "<link-team>Tim BolehNggak.ID</link-team>. Cuci tangan yang sering ya, guys!. Terinspirasi dari <link-can-i-go>canigo.sg</link-can-i-go>",
+  "common.back_to_home": "Kembali Ke Beranda",
+  "common.source": "Sumber",
+  "disclaimer.title": "Disclaimer",
+  "disclaimer.content": "<li>You are relying on the information provided at your own risk.</li><li>You should consult official sources before you act on this information.</li><li>The authors of this site are not professionals and are not giving professional advice.</li><li>The content posted may be invalid over time, or inaccurate due to human error.</li><li>The authors of this site do not represent any organisation, nor are we doing this on behalf of any organisation.</li><li>Any information posted is to the best of our knowledge and not intended to defame.</li><li>We are not responsible for comments posted by other readers.</li><li>We are trying to help. Please don’t lawyer up if we made a mistake or were ill-informed. Feedback is always appreciated.</li>",
+  "404.title": "404: Not found",
+  "404.content": "You just hit a route that doesn&#39;t exist... the sadness.",
+  "privacy_policy.title": "Kebijakan Privasi",
+  "privacy_policy.content": "Lorem ipsum dolor sit amet",
+  "about.title": "About",
+  "about.content": "<p>bolehnggak.id dibuat dengan \uD83D\uDC95\uD83D\uDC95️ oleh <link-arian>Arian</link-arian>, <link-wahyu>Wahyu</link-wahyu>, <link-lintang>Lintang</link-lintang>, <link-rara>Rara</link-rara>, dan <link-aswin>Aswin</link-aswin></p><p>Kita terinspirasi dari canigo.sg yang ngasi tau masyarakat Singapore tentang lokasi yang boleh dan nggak boleh dikunjungin di saat musim pandemi COVID-19.</p>"
 }

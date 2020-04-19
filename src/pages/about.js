@@ -7,16 +7,28 @@ import tw from "twin.macro"
 import Layout from "../components/Layout/Layout"
 import SEO from "../components/SEO/SEO"
 
-const DisclaimerPage = () => {
+const AboutPage = () => {
   const { formatMessage: f } = useIntl()
 
   const Heading = styled.div`
     ${tw`text-base mb-4 clearfix`}
   `
 
-  const Content = styled.ul`
-    ${tw`text-xs list-disc pl-4 clearfix`}
+  const Content = styled.div`
+    ${tw`text-xs clearfix`}
     color: #232831;
+
+    p {
+      ${tw`mb-4`}
+    }
+
+    p:last-child {
+      ${tw`mb-0`}
+    }
+
+    a {
+      ${tw`underline`}
+    }
   `
 
   const Back = styled.div`
@@ -25,16 +37,21 @@ const DisclaimerPage = () => {
 
   return (
     <Layout>
-      <SEO title={f({ id: "disclaimer.title" })} />
+      <SEO title={f({ id: "about.title" })} />
       <div className="container mx-auto">
         <Heading>
-          <FormattedMessage id="disclaimer.title" />
+          <FormattedMessage id="about.title" />
         </Heading>
         <Content>
           <FormattedMessage
-            id="disclaimer.content"
+            id="about.content"
             values={{
-              li: (...chunks) => <li>{chunks}</li>,
+              p: (...chunks) => <p>{chunks}</p>,
+              "link-arian": (...chunks) => <a href="/">{chunks}</a>,
+              "link-wahyu": (...chunks) => <a href="/">{chunks}</a>,
+              "link-lintang": (...chunks) => <a href="/">{chunks}</a>,
+              "link-rara": (...chunks) => <a href="/">{chunks}</a>,
+              "link-aswin": (...chunks) => <a href="/">{chunks}</a>,
             }}
           />
         </Content>
@@ -48,4 +65,4 @@ const DisclaimerPage = () => {
   )
 }
 
-export default DisclaimerPage
+export default AboutPage

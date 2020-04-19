@@ -7,36 +7,30 @@ import tw from "twin.macro"
 import Layout from "../components/Layout/Layout"
 import SEO from "../components/SEO/SEO"
 
-const DisclaimerPage = () => {
+const PrivacyPolicyPage = () => {
   const { formatMessage: f } = useIntl()
 
   const Heading = styled.div`
     ${tw`text-base mb-4 clearfix`}
   `
 
-  const Content = styled.ul`
-    ${tw`text-xs list-disc pl-4 clearfix`}
+  const Content = styled.div`
+    ${tw`text-xs clearfix`}
     color: #232831;
   `
 
   const Back = styled.div`
     ${tw`text-sm underline clearfix outline-none focus:outline-none`}
   `
-
   return (
     <Layout>
-      <SEO title={f({ id: "disclaimer.title" })} />
+      <SEO title={f({ id: "privacy_policy.title" })} />
       <div className="container mx-auto">
         <Heading>
-          <FormattedMessage id="disclaimer.title" />
+          <FormattedMessage id="privacy_policy.title" />
         </Heading>
         <Content>
-          <FormattedMessage
-            id="disclaimer.content"
-            values={{
-              li: (...chunks) => <li>{chunks}</li>,
-            }}
-          />
+          <FormattedMessage id="privacy_policy.content" />
         </Content>
         <Back>
           <Link to="/">
@@ -48,4 +42,4 @@ const DisclaimerPage = () => {
   )
 }
 
-export default DisclaimerPage
+export default PrivacyPolicyPage

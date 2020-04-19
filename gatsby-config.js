@@ -66,5 +66,17 @@ module.exports = {
         icon: `src/images/bolehnggak_id-icon.png`,
       },
     },
+    {
+      resolve: `gatsby-plugin-intl`,
+      options: {
+        path: `${__dirname}/src/translations`,
+        // supported language
+        languages: [`id`],
+        // language file path
+        defaultLanguage: `id`,
+        // option to redirect to `/ko` when connecting `/`
+        redirect: false,
+      },
+    },
   ],
 }

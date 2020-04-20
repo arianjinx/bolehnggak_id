@@ -1,11 +1,14 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Link } from "gatsby"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
 import { FormattedMessage } from "gatsby-plugin-intl"
 import Contribution from "../Contribution/Contribution"
+import { ActivityContext } from "../../context/ActivityContext"
 
 const Footer = () => {
+  const { isShowOnboarding } = useContext(ActivityContext)
+
   const InnerContainer = styled.footer`
     ${tw`relative px-6`}
   `
@@ -34,7 +37,7 @@ const Footer = () => {
 
   return (
     <div className="container mx-auto">
-      <Contribution />
+      {!isShowOnboarding && <Contribution />}
       <InnerContainer>
         <Content>
           &copy;

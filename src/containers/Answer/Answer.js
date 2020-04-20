@@ -22,7 +22,7 @@ const Answer = ({ data }) => {
     }
   }
 
-  const AnswerContent = styled.p`
+  const AnswerContent = styled.div`
     ${tw`text-base leading-relaxed`};
     color: ${colorStatusToggler()};
   `

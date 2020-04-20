@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 import { useIntl } from "react-intl"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
@@ -7,9 +7,10 @@ import Layout from "../components/Layout/Layout"
 import SEO from "../components/SEO/SEO"
 import Form from "../containers/Form/Form"
 import Popup from "../components/Popup/Popup"
-import ActivityProvider from "../context/ActivityContext"
+import { ActivityContext } from "../context/ActivityContext"
 
 const IndexPage = () => {
+  const { isShowOnboarding } = useContext(ActivityContext)
   const InnerContainer = styled.div`
     ${tw`pt-20 flex w-full`}
   `
@@ -22,14 +23,15 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title={f({ id: "homepage.title" })} isHomePage />
-      <div className="container mx-auto flex">
-        <ActivityProvider>
+      {isShowOnboarding ? (
+        <Popup />
+      ) : (
+        <div className="container mx-auto flex">
           <InnerContainer>
             <Form />
           </InnerContainer>
-        </ActivityProvider>
-      </div>
-      <Popup className="hidden" />
+        </div>
+      )}
     </Layout>
   )
 }

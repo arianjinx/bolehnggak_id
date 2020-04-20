@@ -14,8 +14,8 @@ const FormContainer = () => {
   const data = useStaticQuery(graphql`
     {
       allGoogleSheetCrowdsourceRow(
+        sort: { fields: activity, order: ASC }
         filter: { published: { eq: true } }
-        sort: { fields: slug, order: ASC }
       ) {
         nodes {
           id

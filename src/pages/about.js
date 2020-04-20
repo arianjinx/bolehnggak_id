@@ -49,6 +49,7 @@ const AboutPage = () => {
               p: (...chunks) => <p>{chunks}</p>,
               "link-arian": (...chunks) => (
                 <a
+                  key="link-arian"
                   href="https://id.linkedin.com/in/arianpradana"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -58,6 +59,7 @@ const AboutPage = () => {
               ),
               "link-wahyu": (...chunks) => (
                 <a
+                  key="link-wahyu"
                   href="https://twitter.com/wahyuwidharto"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -67,6 +69,7 @@ const AboutPage = () => {
               ),
               "link-lintang": (...chunks) => (
                 <a
+                  key="link-lintang"
                   href="https://id.linkedin.com/in/lintanggustika"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -74,9 +77,14 @@ const AboutPage = () => {
                   {chunks}
                 </a>
               ),
-              "link-rara": (...chunks) => <a href="/">{chunks}</a>,
+              "link-rara": (...chunks) => (
+                <a key="link-rara" href="/">
+                  {chunks}
+                </a>
+              ),
               "link-aswin": (...chunks) => (
                 <a
+                  key="link-aswin"
                   href="https://id.linkedin.com/in/aswinprasetyo"
                   target="_blank"
                   rel="noopener noreferrer"

@@ -63,7 +63,7 @@ module.exports = {
         printRejected: true,
         develop: false,
         tailwind: true,
-        ignore: ["src/containers/SelectBoxContainer/SelectBoxContainer.css"],
+        ignore: ["src/components/SelectBox/SelectBox.css"],
         whitelistPatternsChildren: [/^token/, /^pre/, /^code/],
       },
     },

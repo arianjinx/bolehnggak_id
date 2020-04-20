@@ -3,8 +3,10 @@ import SelectBox from "../../components/SelectBox/SelectBox"
 import { escapeRegexCharacters } from "../../utils/utils"
 import isMobile from "ismobilejs"
 import { ActivityContext } from "../../context/ActivityContext"
+import { useIntl } from "gatsby-plugin-intl"
 
 const SelectBoxContainer = ({ data }) => {
+  const { formatMessage: f } = useIntl()
   const {
     isShowAutosuggest,
     setIsShowAutosuggest,
@@ -64,7 +66,7 @@ const SelectBoxContainer = ({ data }) => {
   }
 
   const inputProps = {
-    placeholder: "Cari kegiatan",
+    placeholder: f({ id: "homepage.type_activity" }),
     value,
     onChange,
     onBlur,

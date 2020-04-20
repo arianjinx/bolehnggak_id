@@ -1,38 +1,16 @@
 import React, { useContext } from "react"
-import "../SelectBoxContainer/SelectBoxContainer.css"
+import "../../components/SelectBox/SelectBox.css"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
 import { Helmet } from "react-helmet"
 import RandomizeButton from "../../components/RandomizeButton/RandomizeButton"
-import SelectBox from "../SelectBoxContainer/SelectBoxContainer"
+import SelectBoxContainer from "../SelectBoxContainer/SelectBoxContainer"
 import { FormattedMessage } from "gatsby-plugin-intl"
-import { graphql, useStaticQuery } from "gatsby"
 import AnswerContainer from "../AnswerContainer/AnswerContainer"
 import { ActivityContext } from "../../context/ActivityContext"
 
 const FormContainer = () => {
-  const data = useStaticQuery(graphql`
-    {
-      allGoogleSheetCrowdsourceRow(
-        sort: { fields: activity, order: ASC }
-        filter: { published: { eq: true } }
-      ) {
-        nodes {
-          id
-          slug
-          answertype
-          answertypelabel
-          activity
-          answer
-          answercontent
-          referencetitle
-          reference
-        }
-      }
-    }
-  `).allGoogleSheetCrowdsourceRow.nodes
-
-  const { selected, setSelected } = useContext(ActivityContext)
+  const { data, selected, setSelected } = useContext(ActivityContext)
 
   const bgStatusToggler = () => {
     if (!selected) {
@@ -51,7 +29,7 @@ const FormContainer = () => {
   `
 
   const InnerContainer = styled.div`
-    ${tw`flex flex-col flex-wrap items-center justify-center w-full px-6`}
+    ${tw`flex flex-col flex-wrap items-center justify-center w-full px-4`}
   `
 
   const FormBlock = styled.div`
@@ -76,7 +54,7 @@ const FormContainer = () => {
             </Question>
             <div className="flex flex-row items-center">
               <div className="my-3 relative mr-2">
-                <SelectBox data={data} />
+                <SelectBoxContainer data={data} />
               </div>
               <div>?</div>
             </div>

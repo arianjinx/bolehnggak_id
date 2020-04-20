@@ -54,9 +54,6 @@ const Footer = () => {
           <Link to="/disclaimer">
             <FormattedMessage id="disclaimer.title" />
           </Link>
-          <Link to="/privacy-policy">
-            <FormattedMessage id="privacy_policy.title" />
-          </Link>
         </ContentLinks>
       </InnerContainer>
     </div>

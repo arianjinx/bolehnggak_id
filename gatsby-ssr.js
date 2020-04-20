@@ -5,6 +5,12 @@ const React = require("react")
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
  */
 
+const ActivityProvider = require("./src/context/ActivityContext")
+
+exports.wrapPageElement = ({ element }) => {
+  return <ActivityProvider>{element}</ActivityProvider>
+}
+
 exports.onPreRenderHTML = ({ getHeadComponents, replaceHeadComponents }) => {
   let headComponents = getHeadComponents()
   headComponents.forEach(head => {

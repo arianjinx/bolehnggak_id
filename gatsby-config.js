@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Boleh Nggak __ ?`,
     description: `Hal yang boleh atau nggak boleh dilakuin saat PSBB COVID-19.`,
-    author: `Arian, Wahyu, Aswin, Rara, dan Lintang`,
+    author: `Arian, Wahyu, Lintang, Rara, dan Aswin`,
     url: `https://bolehnggak.id`,
     secureUrl: `https://bolehnggak.id`,
     canonical: `https://bolehnggak.id/`,

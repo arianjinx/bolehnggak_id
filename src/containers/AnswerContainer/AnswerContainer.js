@@ -63,7 +63,9 @@ const AnswerContainer = ({ data }) => {
           <AnswerSource>
             <FormattedMessage id="common.source" />
             {": "}
-            <a href={data.reference}>{data.referencetitle}</a>
+            <a href={data.reference} target="_blank" rel="noreferrer">
+              {data.referencetitle}
+            </a>
           </AnswerSource>
         )}
       </Answer>

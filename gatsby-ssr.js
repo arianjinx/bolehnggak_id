@@ -7,7 +7,7 @@ const React = require("react")
 
 const ActivityProvider = require("./src/context/ActivityContext")
 
-exports.wrapPageElement = ({ element }) => {
+exports.wrapRootElement = ({ element }) => {
   return <ActivityProvider>{element}</ActivityProvider>
 }
 

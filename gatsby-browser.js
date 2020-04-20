@@ -7,6 +7,6 @@
 import React from "react"
 import ActivityProvider from "./src/context/ActivityContext"
 
-export const wrapPageElement = ({ element }) => {
+export const wrapRootElement = ({ element }) => {
   return <ActivityProvider>{element}</ActivityProvider>
 }

@@ -84,6 +84,7 @@ const SelectBoxContainer = ({ data }) => {
       getSuggestionValue={getSuggestionValue}
       renderSuggestion={renderSuggestion}
       inputProps={inputProps}
+      boxPlaceholder={f({ id: "homepage.choose_activity" })}
       focusInputOnSuggestionClick={focusInputOnSuggestionClick}
       onSuggestionSelected={onSuggestionSelected}
       selected={selected}

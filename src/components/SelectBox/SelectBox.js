@@ -4,7 +4,6 @@ import styled from "@emotion/styled"
 import tw from "twin.macro"
 import "./SelectBox.css"
 import IconTriangle from "../../images/icon-triangle.svg"
-import { useIntl } from "gatsby-plugin-intl"
 
 const SelectBox = ({
   isShowAutosuggest,
@@ -18,8 +17,8 @@ const SelectBox = ({
   focusInputOnSuggestionClick,
   onSuggestionSelected,
   selected,
+  boxPlaceholder,
 }) => {
-  const { formatMessage: f } = useIntl()
   const Box = styled.div`
     ${tw`
     cursor-pointer 
@@ -46,7 +45,7 @@ const SelectBox = ({
   return (
     <>
       <Box onClick={handleBoxClick}>
-        {selected ? selected.activity : f({ id: "homepage.choose_activity" })}
+        {selected ? selected.activity : boxPlaceholder}
         <IconTriangleWrapper src={IconTriangle} alt="" />
       </Box>
       {isShowAutosuggest && (

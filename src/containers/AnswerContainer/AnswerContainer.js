@@ -40,7 +40,7 @@ const AnswerContainer = ({ data }) => {
 
   function List(props) {
     return (
-      <ul className="list-disc text-left pl-4 mb-2 clearfix mx-auto inline-block">
+      <ul className="list-disc text-left pl-5 mb-2 clearfix mx-auto inline-block">
         {props.children}
       </ul>
     )

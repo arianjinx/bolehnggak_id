@@ -47,11 +47,43 @@ const AboutPage = () => {
             id="about.content"
             values={{
               p: (...chunks) => <p>{chunks}</p>,
-              "link-arian": (...chunks) => <a href="/">{chunks}</a>,
-              "link-wahyu": (...chunks) => <a href="/">{chunks}</a>,
-              "link-lintang": (...chunks) => <a href="/">{chunks}</a>,
+              "link-arian": (...chunks) => (
+                <a
+                  href="https://id.linkedin.com/in/arianpradana"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {chunks}
+                </a>
+              ),
+              "link-wahyu": (...chunks) => (
+                <a
+                  href="https://twitter.com/wahyuwidharto"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {chunks}
+                </a>
+              ),
+              "link-lintang": (...chunks) => (
+                <a
+                  href="https://id.linkedin.com/in/lintanggustika"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {chunks}
+                </a>
+              ),
               "link-rara": (...chunks) => <a href="/">{chunks}</a>,
-              "link-aswin": (...chunks) => <a href="/">{chunks}</a>,
+              "link-aswin": (...chunks) => (
+                <a
+                  href="https://id.linkedin.com/in/aswinprasetyo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {chunks}
+                </a>
+              ),
             }}
           />
         </Content>

@@ -9,7 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
-import Footer from "../Footer/Footer"
+import Footer from "../../containers/Footer/Footer"
 import "./Layout.css"
 
 const Wrapper = styled.div`

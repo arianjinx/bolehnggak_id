@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby"
 export const ActivityContext = createContext(null)
 
 const ActivityProvider = ({ children }) => {
-  const data = useStaticQuery(graphql`
+  const { allGoogleSheetCrowdsourceRow } = useStaticQuery(graphql`
     {
       allGoogleSheetCrowdsourceRow(
         sort: { fields: activity, order: ASC }
@@ -23,15 +23,22 @@ const ActivityProvider = ({ children }) => {
         }
       }
     }
-  `).allGoogleSheetCrowdsourceRow.nodes
+  `)
+
+  const data = allGoogleSheetCrowdsourceRow.nodes
+
+  const [isShowOnboarding, setIsShowOnboarding] = useState(true)
 
   const [isShowAutosuggest, setIsShowAutosuggest] = useState(false)
+
   const [selected, setSelected] = useState(null)
 
   return (
     <ActivityContext.Provider
       value={{
         data,
+        isShowOnboarding,
+        setIsShowOnboarding,
         isShowAutosuggest,
         setIsShowAutosuggest,
         selected,

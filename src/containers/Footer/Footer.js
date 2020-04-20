@@ -43,7 +43,15 @@ const Footer = () => {
             id="common.copyright"
             values={{
               "link-team": (...chunks) => <Link to="/about">{chunks}</Link>,
-              "link-can-i-go": (...chunks) => <a href="/">{chunks}</a>,
+              "link-can-i-go": (...chunks) => (
+                <a
+                  href="https://canigo.sg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {chunks}
+                </a>
+              ),
             }}
           />
         </Content>

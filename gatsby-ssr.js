@@ -5,7 +5,7 @@ const React = require("react")
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
  */
 
-const ActivityProvider = require("./src/context/ActivityContext")
+const ActivityProvider = require("./src/context/ActivityContext").default
 
 exports.wrapRootElement = ({ element }) => {
   return <ActivityProvider>{element}</ActivityProvider>

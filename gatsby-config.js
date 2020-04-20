@@ -29,7 +29,7 @@ module.exports = {
         worksheetTitle: "CROWDSOURCE",
         credentials:
           process.env.NODE_ENV === "production"
-            ? JSON.parse(process.env.GOOGLE_SERVICE_CREDENTIALS)
+            ? require("./google-service-credential.json") // JSON.parse(process.env.GOOGLE_SERVICE_CREDENTIALS)
             : require("./google-service-credential.json"),
       },
     },

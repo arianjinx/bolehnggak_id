@@ -37,7 +37,7 @@ const Footer = () => {
 
   return (
     <div className="container mx-auto">
-      {!isShowOnboarding && <Contribution />}
+      {isShowOnboarding && <Contribution />}
       <InnerContainer>
         <Content>
           &copy;

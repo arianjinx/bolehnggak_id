@@ -1,7 +1,17 @@
 import React, { createContext, useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
-export const ActivityContext = createContext(null)
+const defaultState = {
+  data: [],
+  isShowOnboarding: true,
+  setIsShowOnboarding: () => {},
+  isShowAutosuggest: false,
+  setIsShowAutosuggest: () => {},
+  selected: null,
+  setSelected: () => {},
+}
+
+export const ActivityContext = createContext(defaultState)
 
 const ActivityProvider = ({ children }) => {
   const { allGoogleSheetCrowdsourceRow } = useStaticQuery(graphql`

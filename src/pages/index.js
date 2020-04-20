@@ -5,7 +5,7 @@ import tw from "twin.macro"
 
 import Layout from "../components/Layout/Layout"
 import SEO from "../components/SEO/SEO"
-import FormContainer from "../containers/FormContainer/FormContainer"
+import Form from "../containers/Form/Form"
 import Popup from "../components/Popup/Popup"
 import ActivityProvider from "../context/ActivityContext"
 
@@ -25,7 +25,7 @@ const IndexPage = () => {
       <div className="container mx-auto flex">
         <ActivityProvider>
           <InnerContainer>
-            <FormContainer />
+            <Form />
           </InnerContainer>
         </ActivityProvider>
       </div>

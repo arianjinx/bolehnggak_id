@@ -4,7 +4,7 @@ import tw from "twin.macro"
 import { FormattedMessage } from "gatsby-plugin-intl"
 import ReactMarkdown from "react-markdown"
 
-const AnswerContainer = ({ data }) => {
+const Answer = ({ data }) => {
   const colorStatusToggler = () => {
     if (!data) {
       return "#232831"
@@ -22,7 +22,7 @@ const AnswerContainer = ({ data }) => {
     }
   }
 
-  const Answer = styled.p`
+  const AnswerContent = styled.p`
     ${tw`text-base leading-relaxed`};
     color: ${colorStatusToggler()};
   `
@@ -50,7 +50,7 @@ const AnswerContainer = ({ data }) => {
 
   return (
     <div className="mx-auto mb-4 max-w-4xl">
-      <Answer>
+      <AnswerContent>
         {data.answercontent && (
           <>
             <ReactMarkdown
@@ -68,8 +68,8 @@ const AnswerContainer = ({ data }) => {
             </a>
           </AnswerSource>
         )}
-      </Answer>
+      </AnswerContent>
     </div>
   )
 }
-export default AnswerContainer
+export default Answer

@@ -6,10 +6,10 @@ import { Helmet } from "react-helmet"
 import RandomizeButton from "../RandomizeButton/RandomizeButton"
 import SelectBoxContainer from "../SelectBoxContainer/SelectBoxContainer"
 import { FormattedMessage } from "gatsby-plugin-intl"
-import AnswerContainer from "../AnswerContainer/AnswerContainer"
+import Answer from "../Answer/Answer"
 import { ActivityContext } from "../../context/ActivityContext"
 
-const FormContainer = () => {
+const Form = () => {
   const { data, selected, setSelected } = useContext(ActivityContext)
 
   const bgStatusToggler = () => {
@@ -59,7 +59,7 @@ const FormContainer = () => {
               <div>?</div>
             </div>
           </FormBlock>
-          {selected && <AnswerContainer data={selected} />}
+          {selected && <Answer data={selected} />}
           <RandomizeButton onClick={handleRandomize} />
         </InnerContainer>
       </Container>
@@ -67,4 +67,4 @@ const FormContainer = () => {
   )
 }
 
-export default FormContainer
+export default Form

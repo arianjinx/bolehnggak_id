@@ -67,13 +67,13 @@ module.exports = {
         whitelistPatternsChildren: [/^token/, /^pre/, /^code/],
       },
     },
-    // {
-    //   resolve: "gatsby-plugin-web-font-loader",
-    //   options: {
-    //     google: {
-    //       families: ["Inter:400,500,600"],
-    //     },
-    //   },
-    // },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: ["Inter:400,500,600"],
+        },
+      },
+    },
   ],
 }

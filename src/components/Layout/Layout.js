@@ -20,6 +20,7 @@ const Layout = ({ children }) => {
 
   const Wrapper = styled.div`
     ${tw`flex flex-col min-h-screen`}
+    ${loading ? `display: none;` : `display: flex;`}
   `
 
   const Main = styled.div`
@@ -28,12 +29,10 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      {!loading && (
-        <Wrapper>
-          <Main>{children}</Main>
-          <Footer />
-        </Wrapper>
-      )}
+      <Wrapper>
+        <Main>{children}</Main>
+        <Footer />
+      </Wrapper>
     </>
   )
 }

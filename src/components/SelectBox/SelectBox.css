@@ -27,16 +27,24 @@
 .react-autosuggest__container {
   @apply absolute left-0 block w-full flex flex-row;
   top: 100%;
-  margin-top: -3px;
+  margin-top: -1px;
+
+  @screen lg {
+    margin-top: -3px;
+  }
 }
 
 .react-autosuggest__input {
-  @apply py-2 px-3 w-full items-start appearance-none;
+  @apply py-1 px-3 w-full items-start appearance-none;
   font-weight: 400;
   font-size: 16px;
   background: #ffffff;
   border: 1px solid #232831;
   border-radius: 2px;
+
+  @screen lg {
+    border-width: 3px;
+  }
 }
 
 .react-autosuggest__input--focused {
@@ -56,7 +64,7 @@
 }
 
 .react-autosuggest__suggestions-container--open {
-  margin-top: -3px;
+  margin-top: -1px;
   top: 100%;
   display: block;
   position: absolute;
@@ -67,6 +75,11 @@
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
   z-index: 2;
+
+  @screen lg {
+    margin-top: -3px;
+    border-width: 3px;
+  }
 }
 
 .react-autosuggest__suggestions-list {
@@ -81,7 +94,7 @@
 
 .react-autosuggest__suggestion {
   font-weight: 400;
-  @apply py-2 px-3 cursor-pointer flex flex-row items-center;
+  @apply py-1 px-3 cursor-pointer flex flex-row items-center;
 }
 
 .react-autosuggest__suggestion--highlighted {

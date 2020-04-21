@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Boleh Nggak __ ?`,
-    description: `Yuk cari tau hal-hal yang kamu boleh atau nggak boleh lakukan selama masa Pembatasan Sosial Berskala Besar (PSBB) di Jakarta!`,
+    description: `Yuk cari tau hal-hal yang kamu boleh atau nggak boleh lakukan selama PSBB di Jakarta!`,
     author: `Arian, Wahyu, Lintang, Rara, dan Aswin`,
     url: `https://bolehnggak.id`,
     secureUrl: `https://bolehnggak.id`,

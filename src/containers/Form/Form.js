@@ -20,12 +20,12 @@ const Form = () => {
   }
 
   const handleRandomize = () => {
-    const randomId = Math.floor(Math.random() * (data.length - 0))
+    const randomId = Math.floor(Math.random() * data.length)
     setSelected(data[randomId])
   }
 
   const Container = styled.div`
-    ${tw`flex flex-row items-center flex-wrap text-base justify-center items-center w-full text-center`}
+    ${tw`flex flex-row items-center flex-wrap text-base justify-center items-center w-full text-center lg:text-4xl`}
   `
 
   const InnerContainer = styled.div`
@@ -37,7 +37,7 @@ const Form = () => {
   `
 
   const Question = styled.div`
-    ${tw`leading-tight mr-2`}
+    ${tw`leading-tight mr-2 lg:font-medium`}
   `
   return (
     <>
@@ -53,7 +53,7 @@ const Form = () => {
               <FormattedMessage id="homepage.question" />
             </Question>
             <div className="flex flex-row items-center">
-              <div className="my-3 relative mr-2">
+              <div className="my-3 lg:my-6 relative mr-2">
                 <SelectBoxContainer data={data} />
               </div>
               <div>?</div>

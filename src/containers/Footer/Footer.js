@@ -10,23 +10,23 @@ const Footer = () => {
   const { isShowOnboarding } = useContext(ActivityContext)
 
   const InnerContainer = styled.div`
-    ${tw`relative px-6 clearfix`}
+    ${tw`relative px-6 clearfix lg:flex lg:flex-row`}
   `
 
   const Content = styled.div`
-    ${tw`text-xs mb-2`}
+    ${tw`text-xs mb-2 lg:text-left lg:flex-1`}
     text-align: center;
-    color: #232831;
+    color: #5a677f;
 
     a {
       ${tw`underline`}
+      color: #232831;
     }
   `
 
   const ContentLinks = styled.div`
     ${tw`text-xs mb-6`}
     text-align: center;
-    color: #232831;
 
     a {
       ${tw`mx-2 underline`}

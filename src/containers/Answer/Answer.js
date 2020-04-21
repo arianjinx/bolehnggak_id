@@ -23,7 +23,7 @@ const Answer = ({ data }) => {
   }
 
   const AnswerContent = styled.div`
-    ${tw`text-base leading-relaxed`};
+    ${tw`text-base lg:text-2xl leading-relaxed`};
     color: ${colorStatusToggler()};
   `
 
@@ -49,7 +49,7 @@ const Answer = ({ data }) => {
   const FormattedAnswer = `**${data.answertypelabel}** ${data.answercontent}`
 
   return (
-    <div className="mx-auto mb-4 max-w-4xl">
+    <div className="mx-auto mb-4 lg:mb-6 max-w-4xl">
       <AnswerContent>
         {data.answercontent && (
           <>

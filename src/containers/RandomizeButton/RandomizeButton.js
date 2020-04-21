@@ -5,7 +5,7 @@ import { FormattedMessage } from "react-intl"
 import IconRefresh from "../../images/icon-refresh.svg"
 
 const Button = styled.button`
-  ${tw`text-xs mb-4 mx-auto px-2 py-1 box-border block mb-10`}
+  ${tw`text-xs lg:text-base select-none mb-4 mx-auto px-2 py-1 box-border block mb-10`}
   box-shadow: 4px 4px 0px 0px rgba(35, 40, 49, 1);
   background-color: #ffc42e;
   border: 2px solid #000000;

@@ -4,6 +4,7 @@ import styled from "@emotion/styled"
 import tw from "twin.macro"
 import "./SelectBox.css"
 import IconTriangle from "../../images/icon-triangle.svg"
+import theme from "../../utils/tailwind.helpers"
 
 const SelectBox = ({
   isShowAutosuggest,
@@ -27,14 +28,22 @@ const SelectBox = ({
     box-border 
     px-3 
     py-1
+    lg:py-3
     justify-center 
     select-none
+    lg:text-2xl
     `}
     min-width: 140px;
     border: 1px solid #232831;
     border-radius: 2px;
     color: ${selected ? "#232831" : "#54D8B8"};
     ${isShowAutosuggest && tw`rounded-b-none`};
+
+    @media (min-width: ${theme.screens.lg}) {
+      border-width: 3px;
+      border-radius: 4px;
+      ${isShowAutosuggest && tw`rounded-b-none`};
+    }
   `
 
   const IconTriangleWrapper = styled.img`

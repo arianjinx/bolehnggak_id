@@ -9,7 +9,7 @@ const Onboarding = () => {
   const { setIsShowOnboarding } = useContext(ActivityContext)
 
   const Content = styled.div`
-    ${tw`mx-4`}
+    ${tw`mx-4 text-center lg:text-xl lg:py-4`}
   `
 
   const handleClick = () => {

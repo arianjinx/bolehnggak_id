@@ -27,10 +27,11 @@ const SelectBox = ({
     bg-white 
     box-border 
     px-3 
-    py-1
+    py-2
     lg:py-3
     justify-center 
     select-none
+    text-base
     lg:text-2xl
     `}
     min-width: 140px;

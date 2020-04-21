@@ -12,7 +12,7 @@ const DisclaimerPage = () => {
   const { formatMessage: f } = useIntl()
 
   const Content = styled.ul`
-    ${tw`text-xs list-disc pl-4 clearfix`}
+    ${tw`text-xs lg:text-base list-disc pl-4 clearfix`}
     color: #232831;
   `
 

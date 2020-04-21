@@ -12,7 +12,7 @@ const AboutPage = () => {
   const { formatMessage: f } = useIntl()
 
   const Content = styled.div`
-    ${tw`text-sm text-left clearfix`}
+    ${tw`text-sm lg:text-base text-left clearfix`}
     color: #232831;
 
     p {

@@ -1,12 +1,16 @@
-import React, { useContext } from "react"
+import React from "react"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
-import { FormattedMessage } from "gatsby-plugin-intl"
-import { ActivityContext } from "../../context/ActivityContext"
 
-const Popup = props => {
-  const { setIsShowOnboarding } = useContext(ActivityContext)
-
+const Popup = ({
+  heading,
+  className,
+  content,
+  cta,
+  ctaColor = "#FFD494",
+  onHandleClose,
+  onHandleClick,
+}) => {
   const Wrapper = styled.div`
     ${tw`flex flex-col justify-center w-full py-10 px-6`}
   `
@@ -44,8 +48,8 @@ const Popup = props => {
     right: 8px;
   `
 
-  const Content = styled.p`
-    ${tw`text-base text-center p-10 pb-6`}
+  const Content = styled.div`
+    ${tw`text-base p-6`}
 
     strong {
       ${tw`font-bold`}
@@ -55,46 +59,29 @@ const Popup = props => {
   const Button = styled.button`
     ${tw`text-sm bg-white uppercase p-3 box-border mx-auto mb-10 block`}
     box-shadow: 4px 4px 0px 0px rgba(35, 40, 49, 1);
-    background: #94ff9e;
+    background: ${ctaColor};
     border: 2px solid #232831;
-
-    &::before {
-      content: "> ";
-    }
-
-    &::after {
-      content: " <";
-    }
   `
 
   const handleClick = e => {
     e.preventDefault()
-    setIsShowOnboarding(false)
+    onHandleClick && onHandleClick()
   }
 
   const handleClose = e => {
     e.preventDefault()
-    setIsShowOnboarding(false)
+    onHandleClose && onHandleClose()
   }
 
   return (
-    <Wrapper className={props.className}>
+    <Wrapper className={className}>
       <Box>
         <BoxHeading>
-          <FormattedMessage id="homepage.menu_bar" />
+          {heading}
           <CloseButton onClick={handleClose} />
         </BoxHeading>
-        <Content>
-          <FormattedMessage
-            id="homepage.intro"
-            values={{
-              bold: (...chunks) => <strong>{chunks}</strong>,
-            }}
-          />
-        </Content>
-        <Button onClick={handleClick}>
-          <FormattedMessage id="homepage.cta_start" />
-        </Button>
+        <Content>{content}</Content>
+        <Button onClick={handleClick}>{cta}</Button>
       </Box>
     </Wrapper>
   )

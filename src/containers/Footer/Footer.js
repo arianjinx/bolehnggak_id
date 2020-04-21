@@ -9,8 +9,8 @@ import { ActivityContext } from "../../context/ActivityContext"
 const Footer = () => {
   const { isShowOnboarding } = useContext(ActivityContext)
 
-  const InnerContainer = styled.footer`
-    ${tw`relative px-6`}
+  const InnerContainer = styled.div`
+    ${tw`relative px-6 clearfix`}
   `
 
   const Content = styled.div`
@@ -36,7 +36,7 @@ const Footer = () => {
   const dt = new Date()
 
   return (
-    <div className="container mx-auto">
+    <footer className="container mx-auto">
       {!isShowOnboarding && <Contribution />}
       <InnerContainer>
         <Content>
@@ -67,7 +67,7 @@ const Footer = () => {
           </Link>
         </ContentLinks>
       </InnerContainer>
-    </div>
+    </footer>
   )
 }
 export default Footer

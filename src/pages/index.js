@@ -6,7 +6,7 @@ import tw from "twin.macro"
 import Layout from "../components/Layout/Layout"
 import SEO from "../components/SEO/SEO"
 import Form from "../containers/Form/Form"
-import Popup from "../components/Popup/Popup"
+import Onboarding from "../containers/Onboarding/Onboarding"
 import { ActivityContext } from "../context/ActivityContext"
 
 const IndexPage = () => {
@@ -24,7 +24,7 @@ const IndexPage = () => {
     <Layout>
       <SEO title={f({ id: "homepage.title" })} isHomePage />
       {isShowOnboarding ? (
-        <Popup />
+        <Onboarding />
       ) : (
         <div className="container mx-auto flex">
           <InnerContainer>

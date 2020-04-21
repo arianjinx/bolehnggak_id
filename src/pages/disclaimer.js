@@ -27,24 +27,22 @@ const DisclaimerPage = () => {
   return (
     <Layout>
       <SEO title={f({ id: "disclaimer.title" })} />
-      <div className="container mx-auto">
-        <Popup
-          heading={<FormattedMessage id="disclaimer.title" />}
-          content={
-            <Content>
-              <FormattedMessage
-                id="disclaimer.content"
-                values={{
-                  li: (...chunks) => <li>{chunks}</li>,
-                }}
-              />
-            </Content>
-          }
-          cta={<FormattedMessage id="common.back_to_home" />}
-          onHandleClose={handleClose}
-          onHandleClick={handleClick}
-        />
-      </div>
+      <Popup
+        heading={<FormattedMessage id="disclaimer.title" />}
+        content={
+          <Content>
+            <FormattedMessage
+              id="disclaimer.content"
+              values={{
+                li: (...chunks) => <li>{chunks}</li>,
+              }}
+            />
+          </Content>
+        }
+        cta={<FormattedMessage id="common.back_to_home" />}
+        onHandleClose={handleClose}
+        onHandleClick={handleClick}
+      />
     </Layout>
   )
 }

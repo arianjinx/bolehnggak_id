@@ -76,11 +76,6 @@ const AboutPage = () => {
                     {chunks}
                   </a>
                 ),
-                "link-rara": (...chunks) => (
-                  <a key="link-rara" href="/">
-                    {chunks}
-                  </a>
-                ),
                 "link-aswin": (...chunks) => (
                   <a
                     key="link-aswin"

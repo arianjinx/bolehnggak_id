@@ -4,7 +4,7 @@ import { ActivityContext } from "../../context/ActivityContext"
 import Popup from "../../components/Popup/Popup"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
-import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
+import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 
 const Onboarding = () => {
   const { setIsShowOnboarding } = useContext(ActivityContext)

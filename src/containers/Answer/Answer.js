@@ -2,6 +2,7 @@ import React from "react"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
 import { FormattedMessage } from "gatsby-plugin-intl"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 import ReactMarkdown from "react-markdown"
 
 const Answer = ({ data }) => {
@@ -63,9 +64,13 @@ const Answer = ({ data }) => {
           <AnswerSource>
             <FormattedMessage id="common.source" />
             {": "}
-            <a href={data.reference} target="_blank" rel="noopener noreferrer">
+            <OutboundLink
+              href={data.reference}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {data.referencetitle}
-            </a>
+            </OutboundLink>
           </AnswerSource>
         )}
       </AnswerContent>

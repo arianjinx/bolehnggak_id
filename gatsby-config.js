@@ -14,6 +14,15 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-163485802-1",
+        head: false,
+        pageTransitionDelay: 0,
+        variationId: 0,
+      },
+    },
+    {
       resolve: `gatsby-plugin-intl`,
       options: {
         path: `${__dirname}/src/translations`,

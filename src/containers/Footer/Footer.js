@@ -5,6 +5,7 @@ import tw from "twin.macro"
 import { FormattedMessage } from "gatsby-plugin-intl"
 import Contribution from "../Contribution/Contribution"
 import { ActivityContext } from "../../context/ActivityContext"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const Footer = () => {
   const { isShowOnboarding } = useContext(ActivityContext)
@@ -47,13 +48,13 @@ const Footer = () => {
             values={{
               "link-team": (...chunks) => <Link to="/about">{chunks}</Link>,
               "link-can-i-go": (...chunks) => (
-                <a
+                <OutboundLink
                   href="https://canigo.sg"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   {chunks}
-                </a>
+                </OutboundLink>
               ),
             }}
           />

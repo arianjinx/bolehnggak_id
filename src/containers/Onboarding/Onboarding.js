@@ -4,6 +4,7 @@ import { ActivityContext } from "../../context/ActivityContext"
 import Popup from "../../components/Popup/Popup"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
 
 const Onboarding = () => {
   const { setIsShowOnboarding } = useContext(ActivityContext)
@@ -14,10 +15,20 @@ const Onboarding = () => {
 
   const handleClick = () => {
     setIsShowOnboarding(false)
+    trackCustomEvent({
+      category: "Onboarding Popup",
+      action: "Click",
+      label: "Close Onboarding Popup via CTA",
+    })
   }
 
   const handleClose = () => {
     setIsShowOnboarding(false)
+    trackCustomEvent({
+      category: "Onboarding Popup",
+      action: "Click",
+      label: "Close Onboarding Popup via Close Button",
+    })
   }
 
   return (

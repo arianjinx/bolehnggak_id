@@ -4,6 +4,7 @@ import { escapeRegexCharacters } from "../../utils/utils"
 import isMobile from "ismobilejs"
 import { ActivityContext } from "../../context/ActivityContext"
 import { useIntl } from "gatsby-plugin-intl"
+import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 
 const SelectBoxContainer = ({ data }) => {
   const { formatMessage: f } = useIntl()
@@ -49,13 +50,29 @@ const SelectBoxContainer = ({ data }) => {
 
   const onSuggestionSelected = (event, { suggestionValue }) => {
     setIsShowAutosuggest(false)
-    setSelected(data.filter(item => item.activity === suggestionValue)[0])
+    const selectedData = data.filter(
+      item => item.activity === suggestionValue
+    )[0]
+    setSelected(selectedData)
+
+    trackCustomEvent({
+      category: "Choose Activities",
+      action: "Click",
+      label: "Choose Activities via Dropdown",
+      value: selectedData.slug,
+    })
   }
 
   const handleBoxClick = () => {
     setSuggestions(data)
     setValue("")
     setIsShowAutosuggest(!isShowAutosuggest)
+
+    trackCustomEvent({
+      category: "Choose Activities",
+      action: "Click",
+      label: "Toggle Dropdown via SelectBox",
+    })
   }
 
   let focusInputOnSuggestionClick = true

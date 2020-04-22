@@ -3,6 +3,7 @@ import styled from "@emotion/styled"
 import tw from "twin.macro"
 import { FormattedMessage } from "react-intl"
 import IconRefresh from "../../images/icon-refresh.svg"
+import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 
 const Button = styled.button`
   ${tw`text-xs lg:text-base select-none mb-4 mx-auto px-2 py-2 box-border block mb-10`}
@@ -19,11 +20,18 @@ const Button = styled.button`
 const Icon = styled.img`
   ${tw`inline-block mr-2 `}
 `
+const RandomizeButton = ({ onClick }) => {
+  const handleClick = () => {
+    onClick && onClick()
+    trackCustomEvent({
+      category: "Randomize Questions",
+      action: "Click",
+      label: "Randomize Questions via Randomize Button",
+    })
+  }
 
-const RandomizeButton = props => {
-  const { onClick } = props
   return (
-    <Button onClick={onClick}>
+    <Button onClick={handleClick}>
       <Icon src={IconRefresh} alt="" />
       <FormattedMessage id="homepage.randomize_questions" />
     </Button>

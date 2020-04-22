@@ -23,13 +23,15 @@ const SelectBox = ({
   const Box = styled.div`
     ${tw`
     cursor-pointer 
-    flex items-center 
+    flex 
+    items-center 
+    text-left
     bg-white 
     box-border 
     px-3 
     py-2
     lg:py-3
-    justify-center 
+    justify-between 
     select-none
     text-base
     lg:text-2xl
@@ -37,7 +39,8 @@ const SelectBox = ({
     min-width: 140px;
     border: 1px solid #232831;
     border-radius: 2px;
-    color: ${selected ? "#232831" : "#54D8B8"};
+    color: ${selected ? "#232831" : "#5471D8"};
+    min-height: 48px;
     ${isShowAutosuggest && tw`rounded-b-none`};
 
     @media (min-width: ${theme.screens.lg}) {

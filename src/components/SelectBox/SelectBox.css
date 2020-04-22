@@ -41,6 +41,7 @@
   background: #ffffff;
   border: 1px solid #232831;
   border-radius: 2px;
+  min-height: 48px;
 
   @screen lg {
     border-width: 3px;
@@ -95,6 +96,7 @@
 .react-autosuggest__suggestion {
   font-weight: 400;
   @apply py-2 px-3 cursor-pointer flex flex-row items-center;
+  min-height: 48px;
 }
 
 .react-autosuggest__suggestion--highlighted {

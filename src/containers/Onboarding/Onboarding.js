@@ -45,11 +45,11 @@ const Onboarding = () => {
         </Content>
       }
       cta={
-        <>
+        <span className="uppercase">
           {"> "}
           <FormattedMessage id="homepage.cta_start" />
           {" <"}
-        </>
+        </span>
       }
       ctaColor="#94ff9e"
       onHandleClose={handleClose}

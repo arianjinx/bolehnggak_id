@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
+import Button from "../../components/Button/Button"
 
 const Popup = ({
   heading,
@@ -57,20 +58,11 @@ const Popup = ({
     }
   `
 
-  const Button = styled.button`
-    ${tw`text-sm bg-white uppercase p-3 box-border mx-auto mb-10 block`}
-    box-shadow: 4px 4px 0px 0px rgba(35, 40, 49, 1);
-    background: ${ctaColor};
-    border: 2px solid #232831;
-  `
-
-  const handleClick = e => {
-    e.preventDefault()
+  const handleClick = () => {
     onHandleClick && onHandleClick()
   }
 
-  const handleClose = e => {
-    e.preventDefault()
+  const handleClose = () => {
     onHandleClose && onHandleClose()
   }
 
@@ -82,7 +74,9 @@ const Popup = ({
           <CloseButton onClick={handleClose} />
         </BoxHeading>
         <Content>{content}</Content>
-        <Button onClick={handleClick}>{cta}</Button>
+        <Button onClick={handleClick} bgColor={ctaColor}>
+          {cta}
+        </Button>
       </Box>
     </Wrapper>
   )

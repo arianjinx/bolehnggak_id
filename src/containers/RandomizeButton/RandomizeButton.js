@@ -1,26 +1,16 @@
 import React from "react"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
+import Button from "../../components/Button/Button"
 import { FormattedMessage } from "react-intl"
 import IconRefresh from "../../images/icon-refresh.svg"
 import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 
-const Button = styled.button`
-  ${tw`text-xs lg:text-base select-none mb-4 mx-auto px-2 py-2 box-border block mb-10`}
-  box-shadow: 4px 4px 0px 0px rgba(35, 40, 49, 1);
-  background-color: #ffc42e;
-  border: 2px solid #000000;
-
-  a {
-    ${tw`underline`}
-    color: #9a0bcc;
-  }
-`
-
-const Icon = styled.img`
-  ${tw`inline-block mr-2 `}
-`
 const RandomizeButton = ({ onClick }) => {
+  const Icon = styled.img`
+    ${tw`inline-block mr-2 `}
+  `
+
   const handleClick = () => {
     onClick && onClick()
     trackCustomEvent({

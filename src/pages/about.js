@@ -7,6 +7,7 @@ import Layout from "../components/Layout/Layout"
 import SEO from "../components/SEO/SEO"
 import Popup from "../components/Popup/Popup"
 import { navigate } from "gatsby"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const AboutPage = () => {
   const { formatMessage: f } = useIntl()
@@ -47,44 +48,44 @@ const AboutPage = () => {
               values={{
                 p: (...chunks) => <p>{chunks}</p>,
                 "link-arian": (...chunks) => (
-                  <a
+                  <OutboundLink
                     key="link-arian"
                     href="https://id.linkedin.com/in/arianpradana"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {chunks}
-                  </a>
+                  </OutboundLink>
                 ),
                 "link-wahyu": (...chunks) => (
-                  <a
+                  <OutboundLink
                     key="link-wahyu"
                     href="https://twitter.com/wahyuwidharto"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {chunks}
-                  </a>
+                  </OutboundLink>
                 ),
                 "link-lintang": (...chunks) => (
-                  <a
+                  <OutboundLink
                     key="link-lintang"
                     href="https://id.linkedin.com/in/lintanggustika"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {chunks}
-                  </a>
+                  </OutboundLink>
                 ),
                 "link-aswin": (...chunks) => (
-                  <a
+                  <OutboundLink
                     key="link-aswin"
                     href="https://id.linkedin.com/in/aswinprasetyo"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {chunks}
-                  </a>
+                  </OutboundLink>
                 ),
               }}
             />

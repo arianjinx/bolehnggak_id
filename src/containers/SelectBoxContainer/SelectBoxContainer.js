@@ -59,7 +59,12 @@ const SelectBoxContainer = ({ data }) => {
       category: "Choose Activities",
       action: "Click",
       label: "Choose Activities via Dropdown",
-      value: selectedData.slug,
+    })
+
+    trackCustomEvent({
+      category: "Activity Ranking",
+      action: "Click",
+      label: selectedData.slug,
     })
   }
 

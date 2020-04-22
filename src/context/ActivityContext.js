@@ -26,7 +26,6 @@ const ActivityProvider = ({ children }) => {
           answertype
           answertypelabel
           activity
-          answer
           answercontent
           referencetitle
           reference

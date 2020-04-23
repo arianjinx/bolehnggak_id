@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import "../../components/SelectBox/SelectBox.css"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
@@ -10,6 +10,7 @@ import Answer from "../Answer/Answer"
 import { navigate } from "gatsby"
 
 const Form = ({ data, selected }) => {
+  const [disabled, setDisabled] = useState(false)
   const bgStatusToggler = () => {
     if (!selected) {
       return "bg-white"
@@ -20,6 +21,7 @@ const Form = ({ data, selected }) => {
   const handleRandomize = () => {
     const randomId = Math.floor(Math.random() * data.length)
     navigate(`/${data[randomId].slug}`)
+    setDisabled(true)
   }
 
   const Container = styled.div`
@@ -58,7 +60,7 @@ const Form = ({ data, selected }) => {
             </div>
           </FormBlock>
           {selected && <Answer data={selected} />}
-          <RandomizeButton onClick={handleRandomize} />
+          <RandomizeButton onClick={handleRandomize} disabled={disabled} />
         </InnerContainer>
       </Container>
     </>

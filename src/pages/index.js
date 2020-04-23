@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect } from "react"
 import { useIntl } from "react-intl"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
@@ -27,23 +27,22 @@ const IndexPage = ({ path, pageContext }) => {
     "background: #fed7d7; color: #000; font-size: 32px;"
   )
 
-  let isHomePage = false
-  if (path === "/") {
-    isHomePage = true
-  }
-  if (!isHomePage) {
-    setIsShowOnboarding(false)
-  }
+  useEffect(() => {
+    if (path === "/") {
+      setIsShowOnboarding(true)
+    }
+  }, [setIsShowOnboarding, path])
 
-  const title = isHomePage
-    ? f({ id: "homepage.title" })
-    : `${f({ id: "common.question_page_title" })} ${pageContext.activity}?`
+  const title =
+    path === "/"
+      ? f({ id: "homepage.title" })
+      : `${f({ id: "common.question_page_title" })} ${pageContext.activity}?`
 
   return (
     <Layout>
       <SEO
         title={title}
-        isHomePage={isHomePage}
+        isHomePage={path === "/"}
         canonical={pageContext ? `${url}/${pageContext.slug}` : url}
       />
       {isShowOnboarding ? (

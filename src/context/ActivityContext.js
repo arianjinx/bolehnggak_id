@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby"
 
 const defaultState = {
   data: [],
-  isShowOnboarding: true,
+  isShowOnboarding: false,
   setIsShowOnboarding: () => {},
   isShowAutosuggest: false,
 }
@@ -33,7 +33,7 @@ const ActivityProvider = ({ children }) => {
 
   const data = allGoogleSheetCrowdsourceRow.nodes
 
-  const [isShowOnboarding, setIsShowOnboarding] = useState(true)
+  const [isShowOnboarding, setIsShowOnboarding] = useState(false)
 
   return (
     <ActivityContext.Provider

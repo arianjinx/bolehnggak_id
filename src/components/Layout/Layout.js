@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
 
   const Wrapper = styled.div`
     ${tw`flex flex-col min-h-screen transition-opacity duration-200 ease-in-out`}
-    ${loading ? tw`opacity-0` : `opacity-100`}
+    ${loading ? `display: none;` : `display: flex;`}
   `
 
   const Main = styled.div`
@@ -29,10 +29,16 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Wrapper>
-        <Main>{children}</Main>
-        <Footer />
-      </Wrapper>
+      {loading ? (
+        <Wrapper>
+          <div>Loading...</div>
+        </Wrapper>
+      ) : (
+        <Wrapper>
+          <Main>{children}</Main>
+          <Footer />
+        </Wrapper>
+      )}
     </>
   )
 }

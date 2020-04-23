@@ -6,7 +6,7 @@ import { FormattedMessage } from "react-intl"
 import IconRefresh from "../../images/icon-refresh.svg"
 import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 
-const RandomizeButton = ({ onClick }) => {
+const RandomizeButton = ({ onClick, disabled }) => {
   const Icon = styled.img`
     ${tw`inline-block mr-2 `}
   `
@@ -21,7 +21,7 @@ const RandomizeButton = ({ onClick }) => {
   }
 
   return (
-    <Button onClick={handleClick}>
+    <Button onClick={handleClick} disabled={disabled}>
       <Icon src={IconRefresh} alt="" />
       <FormattedMessage id="homepage.randomize_questions" />
     </Button>

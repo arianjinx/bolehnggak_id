@@ -19,9 +19,8 @@ const Layout = ({ children }) => {
   }, [])
 
   const Wrapper = styled.div`
-    ${tw`flex flex-col min-h-screen`}
-    transition: opacity 0.25s ease;
-    ${loading ? `opacity: 0;` : `opacity: 1;`}
+    ${tw`flex flex-col min-h-screen transition-opacity duration-200 ease-in-out`}
+    ${loading ? tw`opacity-0` : `opacity-100`}
   `
 
   const Main = styled.div`

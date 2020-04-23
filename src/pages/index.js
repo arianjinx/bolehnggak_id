@@ -8,15 +8,20 @@ import SEO from "../components/SEO/SEO"
 import Form from "../containers/Form/Form"
 import Onboarding from "../containers/Onboarding/Onboarding"
 import { ActivityContext } from "../context/ActivityContext"
+import useSiteMetadata from "../hooks/useSiteMetadata"
 
 const IndexPage = ({ path, pageContext }) => {
+  const { url } = useSiteMetadata()
   const { data, isShowOnboarding, setIsShowOnboarding } = useContext(
     ActivityContext
   )
+
+  const { formatMessage: f } = useIntl()
+
   const InnerContainer = styled.div`
     ${tw`pt-20 flex w-full`}
   `
-  const { formatMessage: f } = useIntl()
+
   console.log(
     `%c ${f({ id: "common.console_log" })}`,
     "background: #fed7d7; color: #000; font-size: 32px;"
@@ -36,7 +41,11 @@ const IndexPage = ({ path, pageContext }) => {
 
   return (
     <Layout>
-      <SEO title={title} isHomePage={isHomePage} />
+      <SEO
+        title={title}
+        isHomePage={isHomePage}
+        canonical={pageContext ? `${url}/${pageContext.slug}` : url}
+      />
       {isShowOnboarding ? (
         <Onboarding />
       ) : (

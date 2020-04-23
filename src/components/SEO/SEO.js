@@ -11,7 +11,7 @@ import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import ogImage from "../../images/bolehnggak_id-og.jpg"
 
-function SEO({ description, lang, meta, title, isHomePage }) {
+function SEO({ description, lang, meta, title, isHomePage, canonical }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -36,6 +36,7 @@ function SEO({ description, lang, meta, title, isHomePage }) {
 
   const metaDescription = description || site.siteMetadata.description
   const metaTitle = isHomePage ? site.siteMetadata.title : title
+  const metaCanonical = isHomePage ? site.siteMetadata.canonical : canonical
 
   return (
     <Helmet
@@ -51,7 +52,7 @@ function SEO({ description, lang, meta, title, isHomePage }) {
         },
         {
           property: `og:url`,
-          content: site.siteMetadata.canonical,
+          content: metaCanonical,
         },
         {
           property: `og:type`,
@@ -115,7 +116,9 @@ function SEO({ description, lang, meta, title, isHomePage }) {
           content: site.siteMetadata.url + ogImage,
         },
       ].concat(meta)}
-    />
+    >
+      <link rel="canonical" href={metaCanonical} />
+    </Helmet>
   )
 }
 

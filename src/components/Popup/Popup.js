@@ -17,8 +17,8 @@ const Popup = ({
   `
 
   const Box = styled.div`
-    ${tw`mx-auto relative bg-white max-w-2xl`}
-    min-width: 290px;
+    ${tw`mx-auto relative bg-white max-w-xs lg:max-w-2xl`}
+    width: 100%;
     box-shadow: 8px 8px 0px 0px rgba(35, 40, 49, 1);
     border: 2px solid #000000;
   `

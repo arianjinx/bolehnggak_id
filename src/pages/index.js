@@ -20,6 +20,7 @@ const IndexPage = ({ path, pageContext }) => {
 
   const InnerContainer = styled.div`
     ${tw`pt-20 flex w-full`}
+    ${isShowOnboarding && "display: none;"}
   `
 
   console.log(
@@ -45,15 +46,12 @@ const IndexPage = ({ path, pageContext }) => {
         isHomePage={path === "/"}
         canonical={pageContext ? `${url}/${pageContext.slug}` : url}
       />
-      {isShowOnboarding ? (
-        <Onboarding />
-      ) : (
-        <div className="container mx-auto flex">
-          <InnerContainer>
-            <Form data={data} selected={path === "/" ? null : pageContext} />
-          </InnerContainer>
-        </div>
-      )}
+      <div className="container mx-auto flex">
+        <Onboarding isShowOnboarding={isShowOnboarding} />
+        <InnerContainer>
+          <Form data={data} selected={path === "/" ? null : pageContext} />
+        </InnerContainer>
+      </div>
     </Layout>
   )
 }

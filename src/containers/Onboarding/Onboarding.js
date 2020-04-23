@@ -6,7 +6,7 @@ import styled from "@emotion/styled"
 import tw from "twin.macro"
 import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 
-const Onboarding = () => {
+const Onboarding = ({ isShowOnboarding }) => {
   const { setIsShowOnboarding } = useContext(ActivityContext)
 
   const Content = styled.div`
@@ -29,6 +29,10 @@ const Onboarding = () => {
       action: "Click",
       label: "Close Onboarding Popup via Close Button",
     })
+  }
+
+  if (!isShowOnboarding) {
+    return false
   }
 
   return (

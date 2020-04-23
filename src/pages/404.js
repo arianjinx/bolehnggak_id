@@ -12,7 +12,7 @@ const NotFoundPage = () => {
   const { formatMessage: f } = useIntl()
 
   const Content = styled.div`
-    ${tw`text-xs lg:text-base clearfix`}
+    ${tw`text-sm lg:text-base clearfix`}
     color: #232831;
   `
 

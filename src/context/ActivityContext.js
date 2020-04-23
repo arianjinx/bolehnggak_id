@@ -6,9 +6,6 @@ const defaultState = {
   isShowOnboarding: true,
   setIsShowOnboarding: () => {},
   isShowAutosuggest: false,
-  setIsShowAutosuggest: () => {},
-  selected: null,
-  setSelected: () => {},
 }
 
 export const ActivityContext = createContext(defaultState)
@@ -38,20 +35,12 @@ const ActivityProvider = ({ children }) => {
 
   const [isShowOnboarding, setIsShowOnboarding] = useState(true)
 
-  const [isShowAutosuggest, setIsShowAutosuggest] = useState(false)
-
-  const [selected, setSelected] = useState(null)
-
   return (
     <ActivityContext.Provider
       value={{
         data,
         isShowOnboarding,
         setIsShowOnboarding,
-        isShowAutosuggest,
-        setIsShowAutosuggest,
-        selected,
-        setSelected,
       }}
     >
       {children}

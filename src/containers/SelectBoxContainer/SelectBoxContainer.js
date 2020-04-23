@@ -1,20 +1,15 @@
-import React, { useState, useContext } from "react"
+import React, { useState } from "react"
 import SelectBox from "../../components/SelectBox/SelectBox"
 import { escapeRegexCharacters } from "../../utils/utils"
 import isMobile from "ismobilejs"
-import { ActivityContext } from "../../context/ActivityContext"
 import { useIntl } from "gatsby-plugin-intl"
 import { trackCustomEvent } from "gatsby-plugin-google-analytics"
+import { navigate } from "gatsby"
 
-const SelectBoxContainer = ({ data }) => {
+const SelectBoxContainer = ({ data, selected }) => {
   const { formatMessage: f } = useIntl()
-  const {
-    isShowAutosuggest,
-    setIsShowAutosuggest,
-    selected,
-    setSelected,
-  } = useContext(ActivityContext)
   const [value, setValue] = useState("")
+  const [isShowAutosuggest, setIsShowAutosuggest] = useState(false)
   const [suggestions, setSuggestions] = useState(data)
 
   const getSuggestions = value => {
@@ -53,7 +48,8 @@ const SelectBoxContainer = ({ data }) => {
     const selectedData = data.filter(
       item => item.activity === suggestionValue
     )[0]
-    setSelected(selectedData)
+
+    navigate(`/${selectedData.slug}`)
 
     trackCustomEvent({
       category: "Choose Activities",

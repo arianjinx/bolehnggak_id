@@ -9,8 +9,8 @@ import Form from "../containers/Form/Form"
 import Onboarding from "../containers/Onboarding/Onboarding"
 import { ActivityContext } from "../context/ActivityContext"
 
-const IndexPage = () => {
-  const { isShowOnboarding } = useContext(ActivityContext)
+const IndexPage = ({ path, pageContext }) => {
+  const { data, isShowOnboarding } = useContext(ActivityContext)
   const InnerContainer = styled.div`
     ${tw`pt-20 flex w-full`}
   `
@@ -23,12 +23,12 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title={f({ id: "homepage.title" })} isHomePage />
-      {isShowOnboarding ? (
+      {isShowOnboarding && path === "/" ? (
         <Onboarding />
       ) : (
         <div className="container mx-auto flex">
           <InnerContainer>
-            <Form />
+            <Form data={data} selected={path === "/" ? null : pageContext} />
           </InnerContainer>
         </div>
       )}

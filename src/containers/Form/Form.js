@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React from "react"
 import "../../components/SelectBox/SelectBox.css"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
@@ -7,11 +7,9 @@ import RandomizeButton from "../RandomizeButton/RandomizeButton"
 import SelectBoxContainer from "../SelectBoxContainer/SelectBoxContainer"
 import { FormattedMessage } from "gatsby-plugin-intl"
 import Answer from "../Answer/Answer"
-import { ActivityContext } from "../../context/ActivityContext"
+import { navigate } from "gatsby"
 
-const Form = () => {
-  const { data, selected, setSelected } = useContext(ActivityContext)
-
+const Form = ({ data, selected }) => {
   const bgStatusToggler = () => {
     if (!selected) {
       return "bg-white"
@@ -21,7 +19,7 @@ const Form = () => {
 
   const handleRandomize = () => {
     const randomId = Math.floor(Math.random() * data.length)
-    setSelected(data[randomId])
+    navigate(`/${data[randomId].slug}`)
   }
 
   const Container = styled.div`
@@ -54,7 +52,7 @@ const Form = () => {
             </Question>
             <div className="flex flex-row items-center">
               <div className="my-3 lg:my-6 relative mr-2">
-                <SelectBoxContainer data={data} />
+                <SelectBoxContainer data={data} selected={selected} />
               </div>
               <div>?</div>
             </div>

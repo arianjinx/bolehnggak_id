@@ -13,14 +13,15 @@ import Footer from "../../containers/Footer/Footer"
 import "./Layout.css"
 
 const Layout = ({ children }) => {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   useEffect(() => {
     setLoading(false)
   }, [])
 
   const Wrapper = styled.div`
     ${tw`flex flex-col min-h-screen`}
-    ${loading ? `display: none;` : `display: flex;`}
+    transition: opacity 0.25s ease;
+    ${loading ? `opacity: 0;` : `opacity: 1;`}
   `
 
   const Main = styled.div`

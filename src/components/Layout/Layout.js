@@ -5,14 +5,21 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useContext, useEffect } from "react"
 import PropTypes from "prop-types"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
 import Footer from "../../containers/Footer/Footer"
 import "./Layout.css"
+import { ActivityContext } from "../../context/ActivityContext"
 
 const Layout = ({ children }) => {
+  const { isLoading, setIsLoading } = useContext(ActivityContext)
+
+  useEffect(() => {
+    setIsLoading(false)
+  }, [setIsLoading])
+
   const Wrapper = styled.div`
     ${tw`flex flex-col min-h-screen transition-opacity duration-200 ease-in-out`}
   `
@@ -23,7 +30,7 @@ const Layout = ({ children }) => {
 
   return (
     <Wrapper>
-      <Main>{children}</Main>
+      <Main>{!isLoading && children}</Main>
       <Footer />
     </Wrapper>
   )

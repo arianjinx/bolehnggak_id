@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Boleh Nggak __ ?`,
+    title: `Boleh nggak __ ?`,
     description: `Yuk cari tau hal-hal yang kamu boleh atau nggak boleh lakukan selama PSBB di Jakarta!`,
     author: `Arian, Wahyu, Lintang, Aswin, Rose, dan Rara `,
     url: `https://bolehnggak.id`,
@@ -38,7 +38,7 @@ module.exports = {
         worksheetTitle: "CROWDSOURCE",
         credentials:
           process.env.NODE_ENV === "production"
-            ? require("./google-service-credential.json") // JSON.parse(process.env.GOOGLE_SERVICE_CREDENTIALS)
+            ? JSON.parse(process.env.GOOGLE_SERVICE_CREDENTIALS)
             : require("./google-service-credential.json"),
       },
     },
@@ -57,7 +57,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Boleh Nggak __ ?`,
+        name: `Boleh nggak __ ?`,
         short_name: `bolehnggak_id`,
         start_url: `/`,
         background_color: `#fff`,

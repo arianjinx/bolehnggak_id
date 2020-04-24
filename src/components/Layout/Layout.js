@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
   return (
     <Wrapper>
       <Main>{!isLoading && children}</Main>
-      <Footer />
+      {!isLoading && <Footer />}
     </Wrapper>
   )
 }

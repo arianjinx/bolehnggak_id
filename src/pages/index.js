@@ -10,11 +10,9 @@ import Onboarding from "../containers/Onboarding/Onboarding"
 import { ActivityContext } from "../context/ActivityContext"
 import useSiteMetadata from "../hooks/useSiteMetadata"
 
-const IndexPage = ({ path, pageContext }) => {
+const IndexPage = () => {
   const { url } = useSiteMetadata()
-  const { data, isShowOnboarding, setIsShowOnboarding } = useContext(
-    ActivityContext
-  )
+  const { isShowOnboarding } = useContext(ActivityContext)
 
   const { formatMessage: f } = useIntl()
 
@@ -23,34 +21,26 @@ const IndexPage = ({ path, pageContext }) => {
     ${isShowOnboarding && "display: none;"}
   `
 
-  console.log(
-    `%c ${f({ id: "common.console_log" })}`,
-    "background: #fed7d7; color: #000; font-size: 32px;"
-  )
-
   useEffect(() => {
-    if (path === "/") {
-      setIsShowOnboarding(true)
-    }
-  }, [setIsShowOnboarding, path])
+    console.log(
+      `%c ${f({ id: "common.console_log" })}`,
+      "background: #fed7d7; color: #000; font-size: 32px;"
+    )
+  }, [f])
 
-  const title =
-    path === "/"
-      ? f({ id: "homepage.title" })
-      : `${f({ id: "common.question_page_title" })} ${pageContext.activity}?`
+  const title = f({ id: "homepage.title" })
 
   return (
     <Layout>
-      <SEO
-        title={title}
-        isHomePage={path === "/"}
-        canonical={pageContext ? `${url}/${pageContext.slug}` : url}
-      />
+      <SEO title={title} isHomePage={true} canonical={url} />
       <div className="container mx-auto flex">
-        <Onboarding isShowOnboarding={isShowOnboarding} />
-        <InnerContainer>
-          <Form data={data} selected={path === "/" ? null : pageContext} />
-        </InnerContainer>
+        {isShowOnboarding ? (
+          <Onboarding isShowOnboarding={isShowOnboarding} />
+        ) : (
+          <InnerContainer>
+            <Form selected={null} />
+          </InnerContainer>
+        )}
       </div>
     </Layout>
   )

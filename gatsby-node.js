@@ -33,7 +33,7 @@ exports.createPages = ({ actions, graphql }) => {
       Promise.reject(result.errors)
     }
 
-    const template = path.resolve("./src/pages/index.js")
+    const template = path.resolve("./src/templates/answer.js")
 
     result.data.allGoogleSheetCrowdsourceRow.edges.forEach(({ node }) => {
       var path = node.slug

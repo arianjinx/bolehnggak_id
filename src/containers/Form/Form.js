@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import "../../components/SelectBox/SelectBox.css"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
@@ -8,8 +8,10 @@ import SelectBoxContainer from "../SelectBoxContainer/SelectBoxContainer"
 import { FormattedMessage } from "gatsby-plugin-intl"
 import Answer from "../Answer/Answer"
 import { navigate } from "gatsby"
+import { ActivityContext } from "../../context/ActivityContext"
 
-const Form = ({ data, selected }) => {
+const Form = ({ selected }) => {
+  const { data } = useContext(ActivityContext)
   const [disabled, setDisabled] = useState(false)
   const bgStatusToggler = () => {
     if (!selected) {
@@ -20,8 +22,8 @@ const Form = ({ data, selected }) => {
 
   const handleRandomize = () => {
     const randomId = Math.floor(Math.random() * data.length)
-    navigate(`/${data[randomId].slug}`)
     setDisabled(true)
+    navigate(`/${data[randomId].slug}`)
   }
 
   const Container = styled.div`

@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Boleh Nggak __ ?`,
     description: `Yuk cari tau hal-hal yang kamu boleh atau nggak boleh lakukan selama PSBB di Jakarta!`,
-    author: `Arian, Wahyu, Lintang, Rara, dan Aswin`,
+    author: `Arian, Wahyu, Lintang, Aswin, Rose, dan Rara `,
     url: `https://bolehnggak.id`,
     secureUrl: `https://bolehnggak.id`,
     canonical: `https://bolehnggak.id/`,
@@ -38,7 +38,7 @@ module.exports = {
         worksheetTitle: "CROWDSOURCE",
         credentials:
           process.env.NODE_ENV === "production"
-            ? JSON.parse(process.env.GOOGLE_SERVICE_CREDENTIALS)
+            ? require("./google-service-credential.json") // JSON.parse(process.env.GOOGLE_SERVICE_CREDENTIALS)
             : require("./google-service-credential.json"),
       },
     },
@@ -69,8 +69,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
-        printRejected: true,
-        develop: false,
+        printRejected: false,
+        develop: true,
         tailwind: true,
         ignore: ["src/components/SelectBox/SelectBox.css"],
         whitelistPatternsChildren: [/^token/, /^pre/, /^code/],

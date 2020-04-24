@@ -6,6 +6,8 @@ const defaultState = {
   isShowOnboarding: true,
   setIsShowOnboarding: () => {},
   isShowAutosuggest: false,
+  isLoading: true,
+  setIsLoading: () => {},
 }
 
 export const ActivityContext = createContext(defaultState)
@@ -34,6 +36,7 @@ const ActivityProvider = ({ children }) => {
   const data = allGoogleSheetCrowdsourceRow.nodes
 
   const [isShowOnboarding, setIsShowOnboarding] = useState(true)
+  const [isLoading, setIsLoading] = useState(true)
 
   return (
     <ActivityContext.Provider
@@ -41,6 +44,8 @@ const ActivityProvider = ({ children }) => {
         data,
         isShowOnboarding,
         setIsShowOnboarding,
+        isLoading,
+        setIsLoading,
       }}
     >
       {children}

@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect } from "react"
 import { Link } from "gatsby"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
@@ -8,7 +8,13 @@ import { ActivityContext } from "../../context/ActivityContext"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const Footer = () => {
-  const { isShowOnboarding } = useContext(ActivityContext)
+  const { isShowOnboarding, isLoading, setIsLoading } = useContext(
+    ActivityContext
+  )
+
+  useEffect(() => {
+    setIsLoading(false)
+  }, [setIsLoading])
 
   const InnerContainer = styled.div`
     ${tw`relative px-6 clearfix lg:flex lg:flex-row`}
@@ -40,25 +46,27 @@ const Footer = () => {
     <footer className="container mx-auto">
       {!isShowOnboarding && <Contribution />}
       <InnerContainer>
-        <Content>
-          &copy;
-          {dt.getFullYear()}{" "}
-          <FormattedMessage
-            id="common.copyright"
-            values={{
-              "link-team": (...chunks) => <Link to="/about">{chunks}</Link>,
-              "link-can-i-go": (...chunks) => (
-                <OutboundLink
-                  href="https://canigo.sg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {chunks}
-                </OutboundLink>
-              ),
-            }}
-          />
-        </Content>
+        {!isLoading && (
+          <Content>
+            &copy;
+            {dt.getFullYear()}{" "}
+            <FormattedMessage
+              id="common.copyright"
+              values={{
+                "link-team": (...chunks) => <Link to="/about">{chunks}</Link>,
+                "link-can-i-go": (...chunks) => (
+                  <OutboundLink
+                    href="https://canigo.sg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {chunks}
+                  </OutboundLink>
+                ),
+              }}
+            />
+          </Content>
+        )}
         <ContentLinks>
           <Link to="/about">
             <FormattedMessage id="about.title" />

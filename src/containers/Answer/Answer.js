@@ -10,6 +10,8 @@ import {
   FacebookShareButton,
   TwitterIcon,
   TwitterShareButton,
+  WhatsappShareButton,
+  WhatsappIcon,
 } from "react-share"
 import useSiteMetadata from "../../hooks/useSiteMetadata"
 
@@ -39,17 +41,28 @@ const Answer = ({ data }) => {
   `
 
   const AnswerSource = styled.div`
-    ${tw`text-sm mb-3`};
+    ${tw`text-sm mb-2`};
     a {
       ${tw`font-bold underline`}
     }
   `
 
+  const ShareText = styled.div`
+    ${tw`text-sm font-bold text-black text-center mb-6 mt-0 clearfix`}
+  `
+
   const SocialButton = styled.div`
-    ${tw`inline-block mx-2 focus:outline-none`}
+    ${tw`inline-block mx-2 focus:outline-none overflow-hidden p-0`}
     border: 2px solid #000000;
     font-size: 0;
     box-shadow: 4px 4px 0px 0px rgba(35, 40, 49, 1);
+
+    & > * {
+      ${tw`appearance-none cursor-pointer`}
+      font-size: 0;
+      margin-left: -1px;
+      margin-top: -1px;
+    }
   `
 
   function Paragraph(props) {
@@ -92,27 +105,43 @@ const Answer = ({ data }) => {
         )}
       </AnswerContent>
       <div className="mx-auto max-w-4xl clearfix">
-        <SocialButton>
-          <FacebookShareButton
-            url={`${siteUrl}/${data.slug}`}
-            quote={`${f({ id: "common.question_page_title" })} ${
-              data.activity
-            }?`}
-          >
-            <FacebookIcon size={43} round={false} />
-          </FacebookShareButton>
-        </SocialButton>
-        <SocialButton>
-          <TwitterShareButton
-            url={`${siteUrl}/${data.slug}`}
-            title={`${f({ id: "common.question_page_title" })} ${
-              data.activity
-            }?`}
-            hashtags={[f({ id: "common.hashtag" })]}
-          >
-            <TwitterIcon size={43} round={false} />
-          </TwitterShareButton>
-        </SocialButton>
+        <ShareText>
+          <FormattedMessage id="common.share" />
+        </ShareText>
+        <div className="clearfix">
+          <SocialButton>
+            <FacebookShareButton
+              url={`${siteUrl}/${data.slug}`}
+              quote={`${f({ id: "common.question_page_title" })} ${
+                data.activity
+              }?`}
+            >
+              <FacebookIcon size={43} round={false} />
+            </FacebookShareButton>
+          </SocialButton>
+          <SocialButton>
+            <TwitterShareButton
+              url={`${siteUrl}/${data.slug}`}
+              title={`${f({ id: "common.question_page_title" })} ${
+                data.activity
+              }?`}
+              hashtags={[f({ id: "common.hashtag" })]}
+            >
+              <TwitterIcon size={43} round={false} />
+            </TwitterShareButton>
+          </SocialButton>
+          <SocialButton>
+            <WhatsappShareButton
+              url={`${siteUrl}/${data.slug}`}
+              title={`${f({ id: "common.question_page_title" })} ${
+                data.activity
+              }?`}
+              separator=" — "
+            >
+              <WhatsappIcon size={43} round={false} />
+            </WhatsappShareButton>
+          </SocialButton>
+        </div>
       </div>
     </div>
   )

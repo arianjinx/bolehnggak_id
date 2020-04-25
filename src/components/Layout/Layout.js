@@ -22,6 +22,12 @@ const Layout = ({ children }) => {
 
   const Wrapper = styled.div`
     ${tw`flex flex-col min-h-screen transition-opacity duration-200 ease-in-out`}
+    ${isLoading ? `opacity: 0;` : `opacity: 1`}
+  `
+
+  const InnerWrapper = styled.div`
+    ${tw`flex flex-col`}
+    ${isLoading ? `opacity: 0;` : `opacity: 1`}
   `
 
   const Main = styled.div`
@@ -30,8 +36,10 @@ const Layout = ({ children }) => {
 
   return (
     <Wrapper>
-      <Main>{!isLoading && children}</Main>
-      {!isLoading && <Footer />}
+      <Main>
+        <InnerWrapper>{children}</InnerWrapper>
+      </Main>
+      <Footer />
     </Wrapper>
   )
 }

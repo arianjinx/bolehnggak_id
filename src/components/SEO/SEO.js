@@ -101,7 +101,7 @@ function SEO({ description, lang, meta, title, isHomePage, canonical }) {
         },
         {
           name: `twitter:url`,
-          content: site.siteMetadata.siteUrl,
+          content: metaCanonical,
         },
         {
           name: `twitter:title`,

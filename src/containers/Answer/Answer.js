@@ -47,6 +47,14 @@ const Answer = ({ data }) => {
     }
   `
 
+  const DisclaimerSource = styled.div`
+    ${tw`text-xs lg:text-sm mt-6 mb-2 max-w-xl mx-auto`};
+    opacity: 0.6;
+    a {
+      ${tw`underline`}
+    }
+  `
+
   const ShareText = styled.div`
     ${tw`text-sm font-bold text-black text-center mb-6 mt-0 clearfix`}
   `
@@ -90,7 +98,7 @@ const Answer = ({ data }) => {
             />
           </>
         )}
-        {data.referencetitle && (
+        {data.referencetitle ? (
           <AnswerSource>
             <FormattedMessage id="common.source" />
             {": "}
@@ -102,6 +110,21 @@ const Answer = ({ data }) => {
               {data.referencetitle}
             </OutboundLink>
           </AnswerSource>
+        ) : (
+          <DisclaimerSource>
+            <span className="font-bold">
+              <FormattedMessage id="disclaimer.title" />
+            </span>
+            {": "}
+            <FormattedMessage id="common.disclaimer_no_reference" />{" "}
+            <OutboundLink
+              href={f({ id: "common.disclaimer_no_reference_url" })}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FormattedMessage id="common.disclaimer_no_reference_link" />
+            </OutboundLink>
+          </DisclaimerSource>
         )}
       </AnswerContent>
       <div className="mx-auto max-w-4xl clearfix">

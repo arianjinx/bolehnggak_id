@@ -21,12 +21,7 @@ const Layout = ({ children }) => {
   }, [setIsLoading])
 
   const Wrapper = styled.div`
-    ${tw`flex flex-col min-h-screen transition-opacity duration-200 ease-in-out`}
-    ${isLoading ? `opacity: 0;` : `opacity: 1`}
-  `
-
-  const InnerWrapper = styled.div`
-    ${tw`flex flex-col w-full`}
+    ${tw`flex flex-col min-h-screen w-full items-center transition-opacity duration-200 ease-in-out`}
     ${isLoading ? `opacity: 0;` : `opacity: 1`}
   `
 
@@ -36,9 +31,7 @@ const Layout = ({ children }) => {
 
   return (
     <Wrapper>
-      <Main>
-        <InnerWrapper>{children}</InnerWrapper>
-      </Main>
+      <Main>{children}</Main>
       <Footer />
     </Wrapper>
   )

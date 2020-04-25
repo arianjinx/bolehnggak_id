@@ -27,7 +27,7 @@ const IndexPage = ({ pageContext }) => {
     <Layout>
       <SEO
         title={title}
-        canonical={pageContext && `${siteUrl}/${pageContext.slug}`}
+        canonical={pageContext && `${siteUrl}/${pageContext.slug}/`}
       />
       <div className="container mx-auto flex">
         <InnerContainer>

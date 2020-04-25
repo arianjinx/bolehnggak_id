@@ -3,7 +3,7 @@ module.exports = {
     title: `Boleh nggak __ ?`,
     description: `Yuk cari tau hal-hal yang kamu boleh atau nggak boleh lakukan selama PSBB di Jakarta!`,
     author: `Arian, Wahyu, Lintang, Aswin, Rose, dan Rara `,
-    url: `https://bolehnggak.id`,
+    siteUrl: `https://bolehnggak.id`,
     secureUrl: `https://bolehnggak.id`,
     canonical: `https://bolehnggak.id/`,
     fbAppId: `909503169491208`,

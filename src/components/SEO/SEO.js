@@ -20,7 +20,7 @@ function SEO({ description, lang, meta, title, isHomePage, canonical }) {
             title
             description
             author
-            url
+            siteUrl
             secureUrl
             canonical
             fbAppId
@@ -69,11 +69,11 @@ function SEO({ description, lang, meta, title, isHomePage, canonical }) {
         {
           property: `og:image`,
           itemprop: `image`,
-          content: site.siteMetadata.url + ogImage,
+          content: site.siteMetadata.siteUrl + ogImage,
         },
         {
           property: `og:image:secure_url`,
-          content: site.siteMetadata.url + ogImage,
+          content: site.siteMetadata.secureUrl + ogImage,
         },
         {
           property: `og:image:width`,
@@ -101,7 +101,7 @@ function SEO({ description, lang, meta, title, isHomePage, canonical }) {
         },
         {
           name: `twitter:url`,
-          content: site.siteMetadata.url,
+          content: site.siteMetadata.siteUrl,
         },
         {
           name: `twitter:title`,
@@ -113,7 +113,7 @@ function SEO({ description, lang, meta, title, isHomePage, canonical }) {
         },
         {
           name: `twitter:image`,
-          content: site.siteMetadata.url + ogImage,
+          content: site.siteMetadata.siteUrl + ogImage,
         },
       ].concat(meta)}
     >

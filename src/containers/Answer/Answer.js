@@ -14,7 +14,7 @@ import {
 import useSiteMetadata from "../../hooks/useSiteMetadata"
 
 const Answer = ({ data }) => {
-  const { url } = useSiteMetadata()
+  const { siteUrl } = useSiteMetadata()
   const { formatMessage: f } = useIntl()
   const colorStatusToggler = () => {
     if (!data) {
@@ -93,7 +93,7 @@ const Answer = ({ data }) => {
       <div className="mx-auto max-w-4xl clearfix">
         <SocialButton>
           <FacebookShareButton
-            url={`${url}/${data.slug}`}
+            url={`${siteUrl}/${data.slug}`}
             quote={`${f({ id: "common.question_page_title" })} ${
               data.activity
             }?`}
@@ -103,7 +103,7 @@ const Answer = ({ data }) => {
         </SocialButton>
         <SocialButton>
           <TwitterShareButton
-            url={`${url}/${data.slug}`}
+            url={`${siteUrl}/${data.slug}`}
             title={`${f({ id: "common.question_page_title" })} ${
               data.activity
             }?`}

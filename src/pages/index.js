@@ -11,7 +11,7 @@ import { ActivityContext } from "../context/ActivityContext"
 import useSiteMetadata from "../hooks/useSiteMetadata"
 
 const IndexPage = () => {
-  const { url } = useSiteMetadata()
+  const { siteUrl } = useSiteMetadata()
   const { isShowOnboarding } = useContext(ActivityContext)
 
   const { formatMessage: f } = useIntl()
@@ -32,7 +32,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title={title} isHomePage={true} canonical={url} />
+      <SEO title={title} isHomePage={true} canonical={siteUrl} />
       <div className="container mx-auto flex">
         {isShowOnboarding ? (
           <Onboarding isShowOnboarding={isShowOnboarding} />

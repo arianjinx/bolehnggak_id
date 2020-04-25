@@ -10,7 +10,7 @@ import useSiteMetadata from "../hooks/useSiteMetadata"
 import { ActivityContext } from "../context/ActivityContext"
 
 const IndexPage = ({ pageContext }) => {
-  const { url } = useSiteMetadata()
+  const { siteUrl } = useSiteMetadata()
   const { setIsShowOnboarding } = useContext(ActivityContext)
   setIsShowOnboarding(false)
 
@@ -27,7 +27,7 @@ const IndexPage = ({ pageContext }) => {
     <Layout>
       <SEO
         title={title}
-        canonical={pageContext && `${url}/${pageContext.slug}`}
+        canonical={pageContext && `${siteUrl}/${pageContext.slug}`}
       />
       <div className="container mx-auto flex">
         <InnerContainer>

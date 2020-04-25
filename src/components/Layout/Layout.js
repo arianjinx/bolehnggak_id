@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
   `
 
   const InnerWrapper = styled.div`
-    ${tw`flex flex-col`}
+    ${tw`flex flex-col w-full`}
     ${isLoading ? `opacity: 0;` : `opacity: 1`}
   `
 

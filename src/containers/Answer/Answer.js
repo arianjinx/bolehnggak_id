@@ -47,6 +47,7 @@ const Answer = ({ data }) => {
 
   const SocialButton = styled.div`
     ${tw`inline-block mx-2 focus:outline-none`}
+    border: 2px solid #000000;
     font-size: 0;
     box-shadow: 4px 4px 0px 0px rgba(35, 40, 49, 1);
   `

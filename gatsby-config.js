@@ -13,6 +13,7 @@ module.exports = {
     twitterCreator: "@arianjinx",
   },
   plugins: [
+    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

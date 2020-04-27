@@ -16,7 +16,7 @@ const ActivityProvider = ({ children }) => {
   const { allGoogleSheetCrowdsourceRow } = useStaticQuery(graphql`
     {
       allGoogleSheetCrowdsourceRow(
-        sort: { fields: activity, order: ASC }
+        sort: { fields: [discoverabilitylevel, activity], order: ASC }
         filter: { published: { eq: true } }
       ) {
         nodes {

@@ -23,7 +23,7 @@ const Form = ({ selected }) => {
   const handleRandomize = () => {
     const randomId = Math.floor(Math.random() * data.length)
     setDisabled(true)
-    navigate(`/${data[randomId].slug}`)
+    navigate(`/${data[randomId].slug}`, { state: { selected: data[randomId] } })
   }
 
   const Container = styled.div`

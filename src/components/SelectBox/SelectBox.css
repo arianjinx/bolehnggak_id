@@ -97,7 +97,7 @@
   font-weight: 400;
 }
 
-.react-autosuggest__suggestion a {
+.react-autosuggest__suggestion > * {
   @apply py-2 px-3 cursor-pointer flex flex-row items-center;
   min-height: 48px;
 }

@@ -5,10 +5,22 @@ import Button from "../../components/Button/Button"
 import { FormattedMessage } from "react-intl"
 import IconRefresh from "../../images/icon-refresh.svg"
 import { trackCustomEvent } from "gatsby-plugin-google-analytics"
+import { keyframes } from "@emotion/core"
 
 const RandomizeButton = ({ onClick, disabled }) => {
+  const rotate = keyframes`
+    from {
+      transform: rotate(0);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  `
+
   const Icon = styled.img`
     ${tw`inline-block mr-2 `}
+    animation: ${rotate} ${disabled && "1s ease infinite"};
   `
 
   const handleClick = () => {

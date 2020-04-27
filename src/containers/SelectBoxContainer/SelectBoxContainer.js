@@ -4,7 +4,7 @@ import { escapeRegexCharacters } from "../../utils/utils"
 import isMobile from "ismobilejs"
 import { useIntl } from "gatsby-plugin-intl"
 import { trackCustomEvent } from "gatsby-plugin-google-analytics"
-import { navigate } from "gatsby"
+import { Link } from "gatsby"
 
 const SelectBoxContainer = ({ data, selected }) => {
   const { formatMessage: f } = useIntl()
@@ -25,7 +25,9 @@ const SelectBoxContainer = ({ data, selected }) => {
 
   const getSuggestionValue = suggestion => suggestion.activity
 
-  const renderSuggestion = suggestion => <span>{suggestion.activity}</span>
+  const renderSuggestion = suggestion => (
+    <Link to={`/${suggestion.slug}`}>{suggestion.activity}</Link>
+  )
 
   const onBlur = () => {
     setIsShowAutosuggest(false)
@@ -48,7 +50,6 @@ const SelectBoxContainer = ({ data, selected }) => {
     const selectedData = data.filter(
       item => item.activity === suggestionValue
     )[0]
-    navigate(`/${selectedData.slug}`, { state: { selected: selectedData } })
 
     trackCustomEvent({
       category: "Choose Activities",

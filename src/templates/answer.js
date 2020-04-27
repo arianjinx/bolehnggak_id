@@ -9,8 +9,7 @@ import Form from "../containers/Form/Form"
 import useSiteMetadata from "../hooks/useSiteMetadata"
 import { ActivityContext } from "../context/ActivityContext"
 
-const AnswerPage = ({ pageContext, location }) => {
-  const selected = location?.state?.selected || pageContext
+const AnswerPage = ({ pageContext }) => {
   const { siteUrl } = useSiteMetadata()
   const { setIsShowOnboarding } = useContext(ActivityContext)
   setIsShowOnboarding(false)
@@ -21,18 +20,18 @@ const AnswerPage = ({ pageContext, location }) => {
     ${tw`pt-20 flex w-full`}
   `
   const title = `${f({ id: "common.question_page_title" })} ${
-    selected.activity
+    pageContext.activity
   }?`
 
   return (
     <Layout>
       <SEO
         title={title}
-        canonical={selected && `${siteUrl}/${selected.slug}/`}
+        canonical={pageContext && `${siteUrl}/${pageContext.slug}/`}
       />
       <div className="container mx-auto flex">
         <InnerContainer>
-          <Form selected={selected} />
+          <Form selected={pageContext} />
         </InnerContainer>
       </div>
     </Layout>

@@ -10,7 +10,7 @@ import useSiteMetadata from "../hooks/useSiteMetadata"
 import { ActivityContext } from "../context/ActivityContext"
 
 const AnswerPage = ({ pageContext, location }) => {
-  const selected = location ? location.state.selected : pageContext
+  const selected = location?.state?.selected || pageContext
   const { siteUrl } = useSiteMetadata()
   const { setIsShowOnboarding } = useContext(ActivityContext)
   setIsShowOnboarding(false)

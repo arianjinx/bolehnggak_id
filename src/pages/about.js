@@ -60,7 +60,7 @@ const AboutPage = () => {
                 "link-wahyu": (...chunks) => (
                   <OutboundLink
                     key="link-wahyu"
-                    href="https://twitter.com/wahyuwidharto"
+                    href="https://id.linkedin.com/in/wahyudwiwidharto"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

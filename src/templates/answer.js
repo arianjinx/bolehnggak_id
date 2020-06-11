@@ -1,5 +1,4 @@
 import React, { useContext } from "react"
-import { useIntl } from "react-intl"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
 
@@ -7,21 +6,17 @@ import Layout from "../components/Layout/Layout"
 import SEO from "../components/SEO/SEO"
 import Form from "../containers/Form/Form"
 import useSiteMetadata from "../hooks/useSiteMetadata"
-import { ActivityContext } from "../context/ActivityContext"
+import { ActivitySetter } from "../context/ActivityContext"
 
 const AnswerPage = ({ pageContext }) => {
   const { siteUrl } = useSiteMetadata()
-  const { setIsShowOnboarding } = useContext(ActivityContext)
+  const { setIsShowOnboarding } = useContext(ActivitySetter)
   setIsShowOnboarding(false)
-
-  const { formatMessage: f } = useIntl()
 
   const InnerContainer = styled.div`
     ${tw`pt-20 flex w-full`}
   `
-  const title = `${f({ id: "common.question_page_title" })} ${
-    pageContext.activity
-  }?`
+  const title = `common.question_page_title ${pageContext.activity}?`
 
   return (
     <Layout>

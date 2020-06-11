@@ -2,13 +2,11 @@ import React, { useContext } from "react"
 import { Link } from "gatsby"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
-import { FormattedMessage } from "gatsby-plugin-intl"
 import Contribution from "../Contribution/Contribution"
-import { ActivityContext } from "../../context/ActivityContext"
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+import { ActivityState } from "../../context/ActivityContext"
 
 const Footer = () => {
-  const { isShowOnboarding } = useContext(ActivityContext)
+  const { isShowOnboarding } = useContext(ActivityState)
 
   const InnerContainer = styled.div`
     ${tw`relative px-6 clearfix lg:flex lg:flex-row`}
@@ -42,30 +40,11 @@ const Footer = () => {
       <InnerContainer>
         <Content>
           &copy;
-          {dt.getFullYear()}{" "}
-          <FormattedMessage
-            id="common.copyright"
-            values={{
-              "link-team": (...chunks) => <Link to="/about">{chunks}</Link>,
-              "link-can-i-go": (...chunks) => (
-                <OutboundLink
-                  href="https://canigo.sg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {chunks}
-                </OutboundLink>
-              ),
-            }}
-          />
+          {dt.getFullYear()} {`common.copyright`}
         </Content>
         <ContentLinks>
-          <Link to="/about">
-            <FormattedMessage id="about.title" />
-          </Link>
-          <Link to="/disclaimer">
-            <FormattedMessage id="disclaimer.title" />
-          </Link>
+          <Link to="/about">about.title</Link>
+          <Link to="/disclaimer">disclaimer.title</Link>
         </ContentLinks>
       </InnerContainer>
     </footer>

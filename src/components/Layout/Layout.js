@@ -11,10 +11,11 @@ import styled from "@emotion/styled"
 import tw from "twin.macro"
 import Footer from "../../containers/Footer/Footer"
 import "./Layout.css"
-import { ActivityContext } from "../../context/ActivityContext"
+import { ActivityState, ActivitySetter } from "../../context/ActivityContext"
 
 const Layout = ({ children }) => {
-  const { isLoading, setIsLoading } = useContext(ActivityContext)
+  const { isLoading } = useContext(ActivityState)
+  const { setIsLoading } = useContext(ActivitySetter)
 
   useEffect(() => {
     setIsLoading(false)

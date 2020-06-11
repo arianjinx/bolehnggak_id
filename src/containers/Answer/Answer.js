@@ -1,8 +1,6 @@
 import React from "react"
-import { useIntl } from "react-intl"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
-import { FormattedMessage } from "gatsby-plugin-intl"
 import { OutboundLink } from "gatsby-plugin-google-analytics"
 import ReactMarkdown from "react-markdown"
 import {
@@ -17,7 +15,6 @@ import useSiteMetadata from "../../hooks/useSiteMetadata"
 
 const Answer = ({ data }) => {
   const { siteUrl } = useSiteMetadata()
-  const { formatMessage: f } = useIntl()
   const colorStatusToggler = () => {
     if (!data) {
       return "#232831"
@@ -100,7 +97,7 @@ const Answer = ({ data }) => {
         )}
         {data.referencetitle ? (
           <AnswerSource>
-            <FormattedMessage id="common.source" />
+            common.source
             {": "}
             <OutboundLink
               href={data.reference}
@@ -112,32 +109,26 @@ const Answer = ({ data }) => {
           </AnswerSource>
         ) : (
           <DisclaimerSource>
-            <span className="font-bold">
-              <FormattedMessage id="disclaimer.title" />
-            </span>
+            <span className="font-bold">disclaimer.title</span>
             {": "}
-            <FormattedMessage id="common.disclaimer_no_reference" />{" "}
+            common.disclaimer_no_reference{" "}
             <OutboundLink
-              href={f({ id: "common.disclaimer_no_reference_url" })}
+              href={`common.disclaimer_no_reference_url`}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FormattedMessage id="common.disclaimer_no_reference_link" />
+              common.disclaimer_no_reference_link
             </OutboundLink>
           </DisclaimerSource>
         )}
       </AnswerContent>
       <div className="mx-auto max-w-4xl clearfix">
-        <ShareText>
-          <FormattedMessage id="common.share" />
-        </ShareText>
+        <ShareText>common.share</ShareText>
         <div className="clearfix">
           <SocialButton>
             <FacebookShareButton
               url={`${siteUrl}/${data.slug}`}
-              quote={`${f({ id: "common.question_page_title" })} ${
-                data.activity
-              }?`}
+              quote={`common.question_page_title ${data.activity}?`}
             >
               <FacebookIcon size={43} round={false} />
             </FacebookShareButton>
@@ -145,10 +136,8 @@ const Answer = ({ data }) => {
           <SocialButton>
             <TwitterShareButton
               url={`${siteUrl}/${data.slug}`}
-              title={`${f({ id: "common.question_page_title" })} ${
-                data.activity
-              }?`}
-              hashtags={[f({ id: "common.hashtag" })]}
+              title={`common.question_page_title ${data.activity}?`}
+              hashtags={`common.hashtag`}
             >
               <TwitterIcon size={43} round={false} />
             </TwitterShareButton>
@@ -156,9 +145,7 @@ const Answer = ({ data }) => {
           <SocialButton>
             <WhatsappShareButton
               url={`${siteUrl}/${data.slug}`}
-              title={`${f({ id: "common.question_page_title" })} ${
-                data.activity
-              }?`}
+              title={`common.question_page_title ${data.activity}?`}
               separator=" — "
             >
               <WhatsappIcon size={43} round={false} />

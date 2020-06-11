@@ -24,15 +24,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-intl`,
-      options: {
-        path: `${__dirname}/src/translations`,
-        languages: [`id`],
-        defaultLanguage: `id`,
-        redirect: false,
-      },
-    },
-    {
       resolve: "gatsby-source-google-sheets",
       options: {
         spreadsheetId: "16skDPETqaL8RXGsfhDtWsNLLtOabbE76Tfw_IzmR0Bg",

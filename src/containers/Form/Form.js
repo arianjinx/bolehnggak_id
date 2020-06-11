@@ -5,13 +5,12 @@ import tw from "twin.macro"
 import { Helmet } from "react-helmet"
 import RandomizeButton from "../RandomizeButton/RandomizeButton"
 import SelectBoxContainer from "../SelectBoxContainer/SelectBoxContainer"
-import { FormattedMessage } from "gatsby-plugin-intl"
 import Answer from "../Answer/Answer"
 import { navigate } from "gatsby"
-import { ActivityContext } from "../../context/ActivityContext"
+import { ActivityState } from "../../context/ActivityContext"
 
 const Form = ({ selected }) => {
-  const { data } = useContext(ActivityContext)
+  const { data } = useContext(ActivityState)
   const [disabled, setDisabled] = useState(false)
   const bgStatusToggler = () => {
     if (!selected) {
@@ -53,9 +52,7 @@ const Form = ({ selected }) => {
       <Container>
         <InnerContainer>
           <FormBlock>
-            <Question>
-              <FormattedMessage id="homepage.question" />
-            </Question>
+            <Question>homepage.question</Question>
             <div className="flex flex-row items-center">
               <div className="my-3 lg:my-6 relative mr-2">
                 <SelectBoxContainer data={data} selected={selected} />

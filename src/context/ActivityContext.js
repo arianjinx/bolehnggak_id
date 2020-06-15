@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby"
 const activityStateDefaultState = {
   data: [],
   isShowOnboarding: true,
-  isLoading: false,
+  isLoading: true,
 }
 
 const activitySetterDefaultState = {
@@ -39,7 +39,7 @@ const ActivityProvider = ({ children }) => {
   const data = allGoogleSheetCrowdsourceRow.nodes
 
   const [isShowOnboarding, setIsShowOnboarding] = useState(true)
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   const ctxState = useMemo(
     () => ({

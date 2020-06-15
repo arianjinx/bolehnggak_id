@@ -129,7 +129,7 @@ const Answer = ({ data }) => {
           <SocialButton>
             <FacebookShareButton
               url={`${siteUrl}/${data.slug}`}
-              quote={`common.question_page_title ${data.activity}?`}
+              quote={`${cr.common.question_page_title} ${data.activity}?`}
             >
               <FacebookIcon size={43} round={false} />
             </FacebookShareButton>
@@ -137,8 +137,8 @@ const Answer = ({ data }) => {
           <SocialButton>
             <TwitterShareButton
               url={`${siteUrl}/${data.slug}`}
-              title={`common.question_page_title ${data.activity}?`}
-              hashtags={`common.hashtag`}
+              title={`${cr.common.question_page_title} ${data.activity}?`}
+              hashtags={cr.common.hashtag}
             >
               <TwitterIcon size={43} round={false} />
             </TwitterShareButton>
@@ -146,7 +146,7 @@ const Answer = ({ data }) => {
           <SocialButton>
             <WhatsappShareButton
               url={`${siteUrl}/${data.slug}`}
-              title={`common.question_page_title ${data.activity}?`}
+              title={`${cr.common.question_page_title} ${data.activity}?`}
               separator=" — "
             >
               <WhatsappIcon size={43} round={false} />

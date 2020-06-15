@@ -56,7 +56,7 @@ const cr = {
     source: "Sumber",
     share: "Sebarkan:",
     question_page_title: "Boleh nggak",
-    hashtag: "covid19",
+    hashtag: ["covid19"],
     disclaimer_no_reference:
       "Karena tidak diatur secara eksplisit, rekomendasi ini ditulis atas pemahaman tim kami terhadap PP PSBB.",
     disclaimer_no_reference_link: "Mohon diterapkan dengan bijaksana ya.",

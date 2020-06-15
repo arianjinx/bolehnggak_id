@@ -8,6 +8,7 @@ import Form from "../containers/Form/Form"
 import Onboarding from "../containers/Onboarding/Onboarding"
 import { ActivityState } from "../context/ActivityContext"
 import useSiteMetadata from "../hooks/useSiteMetadata"
+import cr from "../translations/constants"
 
 const IndexPage = () => {
   const { siteUrl } = useSiteMetadata()
@@ -20,12 +21,12 @@ const IndexPage = () => {
 
   useEffect(() => {
     console.log(
-      `%c ${`common.console_log`}`,
+      `%c ${cr.common.console_log}`,
       "background: #fed7d7; color: #000; font-size: 32px;"
     )
   }, [])
 
-  const title = "homepage.title"
+  const title = cr.homepage.title
 
   return (
     <Layout>

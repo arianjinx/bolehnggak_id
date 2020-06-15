@@ -8,6 +8,7 @@ import SelectBoxContainer from "../SelectBoxContainer/SelectBoxContainer"
 import Answer from "../Answer/Answer"
 import { navigate } from "gatsby"
 import { ActivityState } from "../../context/ActivityContext"
+import cr from "../../translations/constants"
 
 const Form = ({ selected }) => {
   const { data } = useContext(ActivityState)
@@ -24,7 +25,7 @@ const Form = ({ selected }) => {
     setDisabled(true)
     setTimeout(() => {
       navigate(`/${data[randomId].slug}`)
-    }, 1000)
+    }, 500)
   }
 
   const Container = styled.div`
@@ -52,7 +53,7 @@ const Form = ({ selected }) => {
       <Container>
         <InnerContainer>
           <FormBlock>
-            <Question>homepage.question</Question>
+            <Question>{cr.homepage.question}</Question>
             <div className="flex flex-row items-center">
               <div className="my-3 lg:my-6 relative mr-2">
                 <SelectBoxContainer data={data} selected={selected} />

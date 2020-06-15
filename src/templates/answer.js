@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
+import cr from "../translations/constants"
 
 import Layout from "../components/Layout/Layout"
 import SEO from "../components/SEO/SEO"
@@ -16,7 +17,7 @@ const AnswerPage = ({ pageContext }) => {
   const InnerContainer = styled.div`
     ${tw`pt-20 flex w-full`}
   `
-  const title = `common.question_page_title ${pageContext.activity}?`
+  const title = `${cr.common.question_page_title} ${pageContext.activity}?`
 
   return (
     <Layout>

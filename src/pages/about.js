@@ -6,6 +6,7 @@ import Layout from "../components/Layout/Layout"
 import SEO from "../components/SEO/SEO"
 import Popup from "../components/Popup/Popup"
 import { navigate } from "gatsby"
+import cr from "../translations/constants"
 
 const AboutPage = () => {
   const Content = styled.div`
@@ -34,11 +35,11 @@ const AboutPage = () => {
 
   return (
     <Layout>
-      <SEO title={`about.title`} />
+      <SEO title={cr.about.title} />
       <Popup
-        heading={`about.title`}
-        content={<Content>{`about-content`}</Content>}
-        cta={`common.back_to_home`}
+        heading={cr.about.title}
+        content={<Content>{cr.about.content}</Content>}
+        cta={cr.common.back_to_home}
         onHandleClose={handleClose}
         onHandleClick={handleClick}
       />

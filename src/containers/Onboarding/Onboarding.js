@@ -3,6 +3,7 @@ import { ActivitySetter } from "../../context/ActivityContext"
 import Popup from "../../components/Popup/Popup"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
+import cr from "../../translations/constants"
 import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 
 const Onboarding = ({ isShowOnboarding }) => {
@@ -36,12 +37,12 @@ const Onboarding = ({ isShowOnboarding }) => {
 
   return (
     <Popup
-      heading={`homepage.menu_bar`}
-      content={<Content>homepage.intro</Content>}
+      heading={cr.homepage.menu_bar}
+      content={<Content>{cr.homepage.intro}</Content>}
       cta={
         <span className="uppercase">
           {"> "}
-          homepage.cta_start
+          {cr.homepage.cta_start}
           {" <"}
         </span>
       }

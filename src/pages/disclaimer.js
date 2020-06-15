@@ -6,6 +6,7 @@ import tw from "twin.macro"
 import Layout from "../components/Layout/Layout"
 import SEO from "../components/SEO/SEO"
 import Popup from "../components/Popup/Popup"
+import cr from "../translations/constants"
 
 const DisclaimerPage = () => {
   const Content = styled.ul`
@@ -23,11 +24,11 @@ const DisclaimerPage = () => {
 
   return (
     <Layout>
-      <SEO title={`disclaimer`} />
+      <SEO title={cr.disclaimer.title} />
       <Popup
-        heading={`disclaimer.title`}
-        content={<Content>disclaimer.content</Content>}
-        cta={`common.back_to_home`}
+        heading={cr.disclaimer.title}
+        content={<Content>{cr.disclaimer.content}</Content>}
+        cta={cr.common.back_to_home}
         onHandleClose={handleClose}
         onHandleClick={handleClick}
       />

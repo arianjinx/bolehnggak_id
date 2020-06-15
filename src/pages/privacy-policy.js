@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
+import cr from "../translations/constants"
 
 import Layout from "../components/Layout/Layout"
 import SEO from "../components/SEO/SEO"
@@ -23,11 +24,11 @@ const PrivacyPolicyPage = () => {
 
   return (
     <Layout>
-      <SEO title={`privacy_policy.title`} />
+      <SEO title={cr.privacy_policy.title} />
       <Popup
-        heading={`privacy_policy.title`}
-        content={<Content>privacy_policy.content</Content>}
-        cta={`common.back_to_home`}
+        heading={cr.privacy_policy.title}
+        content={<Content>{cr.privacy_policy.content}</Content>}
+        cta={cr.common.back_to_home}
         onHandleClose={handleClose}
         onHandleClick={handleClick}
       />

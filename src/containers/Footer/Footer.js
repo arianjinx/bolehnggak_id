@@ -4,6 +4,7 @@ import styled from "@emotion/styled"
 import tw from "twin.macro"
 import Contribution from "../Contribution/Contribution"
 import { ActivityState } from "../../context/ActivityContext"
+import cr from "../../translations/constants"
 
 const Footer = () => {
   const { isShowOnboarding } = useContext(ActivityState)
@@ -40,11 +41,11 @@ const Footer = () => {
       <InnerContainer>
         <Content>
           &copy;
-          {dt.getFullYear()} {`common.copyright`}
+          {dt.getFullYear()} {cr.common.copyright}
         </Content>
         <ContentLinks>
-          <Link to="/about">about.title</Link>
-          <Link to="/disclaimer">disclaimer.title</Link>
+          <Link to="/about">{cr.about.title}</Link>
+          <Link to="/disclaimer">{cr.disclaimer.title}</Link>
         </ContentLinks>
       </InnerContainer>
     </footer>

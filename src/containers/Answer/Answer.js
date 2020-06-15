@@ -12,6 +12,7 @@ import {
   WhatsappIcon,
 } from "react-share"
 import useSiteMetadata from "../../hooks/useSiteMetadata"
+import cr from "../../translations/constants"
 
 const Answer = ({ data }) => {
   const { siteUrl } = useSiteMetadata()
@@ -97,7 +98,7 @@ const Answer = ({ data }) => {
         )}
         {data.referencetitle ? (
           <AnswerSource>
-            common.source
+            {cr.common.source}
             {": "}
             <OutboundLink
               href={data.reference}
@@ -109,21 +110,21 @@ const Answer = ({ data }) => {
           </AnswerSource>
         ) : (
           <DisclaimerSource>
-            <span className="font-bold">disclaimer.title</span>
+            <span className="font-bold">{cr.disclaimer.title}</span>
             {": "}
-            common.disclaimer_no_reference{" "}
+            {cr.common.disclaimer_no_reference}{" "}
             <OutboundLink
               href={`common.disclaimer_no_reference_url`}
               target="_blank"
               rel="noopener noreferrer"
             >
-              common.disclaimer_no_reference_link
+              {cr.common.disclaimer_no_reference_link}
             </OutboundLink>
           </DisclaimerSource>
         )}
       </AnswerContent>
       <div className="mx-auto max-w-4xl clearfix">
-        <ShareText>common.share</ShareText>
+        <ShareText>{cr.common.share}</ShareText>
         <div className="clearfix">
           <SocialButton>
             <FacebookShareButton

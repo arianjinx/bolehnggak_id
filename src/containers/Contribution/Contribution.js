@@ -2,6 +2,7 @@ import React from "react"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
 import theme from "../../utils/tailwind.helpers"
+import cr from "../../translations/constants"
 
 const Container = styled.div`
   ${tw`text-xs lg:text-base mb-8 mx-auto w-full p-2 box-border`}
@@ -22,7 +23,7 @@ const Container = styled.div`
 `
 
 const Contribution = () => {
-  return <Container>common.contribution</Container>
+  return <Container>{cr.common.contribution}</Container>
 }
 
 export default Contribution

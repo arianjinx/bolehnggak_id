@@ -4,6 +4,7 @@ import { escapeRegexCharacters } from "../../utils/utils"
 import isMobile from "ismobilejs"
 import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 import { Link } from "gatsby"
+import cr from "../../translations/constants"
 
 const SelectBoxContainer = ({ data, selected }) => {
   const [value, setValue] = useState("")
@@ -82,7 +83,7 @@ const SelectBoxContainer = ({ data, selected }) => {
   }
 
   const inputProps = {
-    placeholder: "homepage.type_activity",
+    placeholder: cr.homepage.type_activity,
     value,
     onChange,
     onBlur,
@@ -100,7 +101,7 @@ const SelectBoxContainer = ({ data, selected }) => {
       getSuggestionValue={getSuggestionValue}
       renderSuggestion={renderSuggestion}
       inputProps={inputProps}
-      boxPlaceholder={"homepage.choose_activity"}
+      boxPlaceholder={cr.homepage.choose_activity}
       focusInputOnSuggestionClick={focusInputOnSuggestionClick}
       onSuggestionSelected={onSuggestionSelected}
       selected={selected}

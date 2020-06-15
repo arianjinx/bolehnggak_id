@@ -8,12 +8,15 @@
 </h1>
 
 ## Project Summary
-https://bolehnggak.id adalah website informasi yang akurat dan noise-free tentang aktivitas/kegiatan yang boleh dan tidak boleh dilakukan oleh warga Indonesia selama masa PSBB pandemi COVID-19 berlangsung.
+
+https://bolehnggak.id adalah website informasi tentang aktivitas/kegiatan yang boleh dan tidak boleh dilakukan oleh warga Indonesia selama masa PSBB pandemi COVID-19 berlangsung.
 
 ## Long Term Vision
+
 Visi ke depannya https://bolehnggak.id bisa menjadi single source of truth orang mencari informasi soal dos and don'ts perihal COVID-19 dan bukan hanya selama PSBB saja. eg: sumber dari anjuran para Expert.
 
 ## Problems Being Solved
+
 - Ketidaktahuan dan sulitnya mencari informasi tentang hal apa saja yang dilarang saat masa PSBB berlangsung.
 - Content yang overwhelming, trigger journey orang mencari informasi mostly hanya saat akan ingin melakukan kegiatan spesifik. Sekarang info soal PSBB hanya dapat dilihat dari Undang-Undang dan Infografik.
 

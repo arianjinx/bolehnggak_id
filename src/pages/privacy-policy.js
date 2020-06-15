@@ -12,6 +12,7 @@ const PrivacyPolicyPage = () => {
   const Content = styled.div`
     ${tw`text-xs lg:text-base clearfix`}
     color: #232831;
+    min-width: 180px;
   `
 
   const handleClose = () => {

@@ -19,6 +19,7 @@ const Button = ({ onClick, bgColor = "#ffc42e", children, disabled }) => {
         : "4px 4px 0 0 rgba(35, 40, 49, 1)"
     };
     background-color: ${isLoading ? "#ccc" : bgColor};
+    color: ${isLoading ? "#717171" : "#000"};
     border: 2px solid #000000;
     min-height: 48px;
     pointer-events: ${disabled ? "none" : "initial"};

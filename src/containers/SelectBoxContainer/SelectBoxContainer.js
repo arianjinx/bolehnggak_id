@@ -2,12 +2,11 @@ import React, { useState } from "react"
 import SelectBox from "../../components/SelectBox/SelectBox"
 import { escapeRegexCharacters } from "../../utils/utils"
 import isMobile from "ismobilejs"
-import { useIntl } from "gatsby-plugin-intl"
 import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 import { Link } from "gatsby"
+import cr from "../../translations/constants"
 
 const SelectBoxContainer = ({ data, selected }) => {
-  const { formatMessage: f } = useIntl()
   const [value, setValue] = useState("")
   const [isShowAutosuggest, setIsShowAutosuggest] = useState(false)
   const [suggestions, setSuggestions] = useState(data)
@@ -84,7 +83,7 @@ const SelectBoxContainer = ({ data, selected }) => {
   }
 
   const inputProps = {
-    placeholder: f({ id: "homepage.type_activity" }),
+    placeholder: cr.homepage.type_activity,
     value,
     onChange,
     onBlur,
@@ -102,7 +101,7 @@ const SelectBoxContainer = ({ data, selected }) => {
       getSuggestionValue={getSuggestionValue}
       renderSuggestion={renderSuggestion}
       inputProps={inputProps}
-      boxPlaceholder={f({ id: "homepage.choose_activity" })}
+      boxPlaceholder={cr.homepage.choose_activity}
       focusInputOnSuggestionClick={focusInputOnSuggestionClick}
       onSuggestionSelected={onSuggestionSelected}
       selected={selected}

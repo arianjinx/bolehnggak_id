@@ -2,10 +2,10 @@ import React from "react"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
 import Button from "../../components/Button/Button"
-import { FormattedMessage } from "react-intl"
 import IconRefresh from "../../images/icon-refresh.svg"
 import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 import { keyframes } from "@emotion/core"
+import cr from "../../translations/constants"
 
 const RandomizeButton = ({ onClick, disabled }) => {
   const rotate = keyframes`
@@ -20,7 +20,7 @@ const RandomizeButton = ({ onClick, disabled }) => {
 
   const Icon = styled.img`
     ${tw`inline-block mr-2 `}
-    animation: ${rotate} ${disabled && "1s ease infinite"};
+    animation: ${rotate} ${disabled && "0.5s ease infinite"};
   `
 
   const handleClick = () => {
@@ -35,7 +35,7 @@ const RandomizeButton = ({ onClick, disabled }) => {
   return (
     <Button onClick={handleClick} disabled={disabled}>
       <Icon src={IconRefresh} alt="" />
-      <FormattedMessage id="homepage.randomize_questions" />
+      {cr.homepage.randomize_questions}
     </Button>
   )
 }

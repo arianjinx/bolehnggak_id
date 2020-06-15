@@ -1,13 +1,13 @@
 import React, { useContext } from "react"
-import { FormattedMessage } from "gatsby-plugin-intl"
-import { ActivityContext } from "../../context/ActivityContext"
+import { ActivitySetter } from "../../context/ActivityContext"
 import Popup from "../../components/Popup/Popup"
 import styled from "@emotion/styled"
 import tw from "twin.macro"
+import cr from "../../translations/constants"
 import { trackCustomEvent } from "gatsby-plugin-google-analytics"
 
 const Onboarding = ({ isShowOnboarding }) => {
-  const { setIsShowOnboarding } = useContext(ActivityContext)
+  const { setIsShowOnboarding } = useContext(ActivitySetter)
 
   const Content = styled.div`
     ${tw`mx-4 text-center lg:text-xl lg:py-4`}
@@ -37,21 +37,12 @@ const Onboarding = ({ isShowOnboarding }) => {
 
   return (
     <Popup
-      heading={<FormattedMessage id="homepage.menu_bar" />}
-      content={
-        <Content>
-          <FormattedMessage
-            id="homepage.intro"
-            values={{
-              bold: (...chunks) => <strong>{chunks}</strong>,
-            }}
-          />
-        </Content>
-      }
+      heading={cr.homepage.menu_bar}
+      content={<Content>{cr.homepage.intro}</Content>}
       cta={
         <span className="uppercase">
           {"> "}
-          <FormattedMessage id="homepage.cta_start" />
+          {cr.homepage.cta_start}
           {" <"}
         </span>
       }

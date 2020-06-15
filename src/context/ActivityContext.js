@@ -1,16 +1,19 @@
-import React, { createContext, useState } from "react"
+import React, { createContext, useState, useMemo } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 
-const defaultState = {
+const activityStateDefaultState = {
   data: [],
   isShowOnboarding: true,
-  setIsShowOnboarding: () => {},
-  isShowAutosuggest: false,
   isLoading: true,
+}
+
+const activitySetterDefaultState = {
+  setIsShowOnboarding: () => {},
   setIsLoading: () => {},
 }
 
-export const ActivityContext = createContext(defaultState)
+export const ActivityState = createContext(activityStateDefaultState)
+export const ActivitySetter = createContext(activitySetterDefaultState)
 
 const ActivityProvider = ({ children }) => {
   const { allGoogleSheetCrowdsourceRow } = useStaticQuery(graphql`
@@ -38,18 +41,29 @@ const ActivityProvider = ({ children }) => {
   const [isShowOnboarding, setIsShowOnboarding] = useState(true)
   const [isLoading, setIsLoading] = useState(true)
 
+  const ctxState = useMemo(
+    () => ({
+      data,
+      isShowOnboarding,
+      isLoading,
+    }),
+    [data, isShowOnboarding, isLoading]
+  )
+
+  const ctxSetter = useMemo(
+    () => ({
+      setIsShowOnboarding,
+      setIsLoading,
+    }),
+    []
+  )
+
   return (
-    <ActivityContext.Provider
-      value={{
-        data,
-        isShowOnboarding,
-        setIsShowOnboarding,
-        isLoading,
-        setIsLoading,
-      }}
-    >
-      {children}
-    </ActivityContext.Provider>
+    <ActivityState.Provider value={ctxState}>
+      <ActivitySetter.Provider value={ctxSetter}>
+        {children}
+      </ActivitySetter.Provider>
+    </ActivityState.Provider>
   )
 }
 

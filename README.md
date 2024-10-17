@@ -1,4 +1,4 @@
-# BolehNggak.id
+# [BolehNggak.id](https://bolehnggak-id.netlify.app)
 
 > **Note: This repository is archived**
 >
@@ -29,11 +29,11 @@ This project was inspired by [canigo.sg](https://canigo.sg). We obtained permiss
 
 ## Long-Term Vision
 
-Our long-term vision for BolehNggak.id was to become the single source of truth for people seeking information about COVID-19 related dos and don'ts, not just during PSBB periods. We aimed to provide expert-sourced recommendations and guidelines to help Indonesian residents navigate the pandemic safely.
+Our long-term vision for [BolehNggak.id](https://bolehnggak-id.netlify.app) was to become the single source of truth for people seeking information about COVID-19 related dos and don'ts, not just during PSBB periods. We aimed to provide expert-sourced recommendations and guidelines to help Indonesian residents navigate the pandemic safely.
 
 ## Problem Statement
 
-BolehNggak.id addressed two main issues:
+[BolehNggak.id](https://bolehnggak-id.netlify.app) addressed two main issues:
 
 1. **Lack of Accessible Information**: Many people found it difficult to access clear information about prohibited activities during PSBB periods.
 
@@ -72,7 +72,7 @@ While this project is no longer active, we hope it serves as an inspiration for 
 
 ---
 
-# BolehNggak.id
+# [BolehNggak.id](https://bolehnggak-id.netlify.app)
 
 > **注意: このリポジトリはアーカイブされています**
 >
@@ -103,11 +103,11 @@ While this project is no longer active, we hope it serves as an inspiration for 
 
 ## 長期的なビジョン
 
-BolehNggak.id の長期的なビジョンは、PSBB 期間中だけでなく、COVID-19 関連の Do's and Don'ts に関する情報を求める人々にとって、信頼できる唯一の情報源となることでした。専門家の推奨事項やガイドラインを提供し、インドネシアの居住者がパンデミックを安全に乗り越えられるよう支援することを目指しました。
+[BolehNggak.id](https://bolehnggak-id.netlify.app) の長期的なビジョンは、PSBB 期間中だけでなく、COVID-19 関連の Do's and Don'ts に関する情報を求める人々にとって、信頼できる唯一の情報源となることでした。専門家の推奨事項やガイドラインを提供し、インドネシアの居住者がパンデミックを安全に乗り越えられるよう支援することを目指しました。
 
 ## 問題提起
 
-BolehNggak.id は主に 2 つの問題に対処しました：
+[BolehNggak.id](https://bolehnggak-id.netlify.app) は主に 2 つの問題に対処しました：
 
 1. **アクセス可能な情報の不足**: 多くの人々が、PSBB 期間中の禁止されている活動に関する明確な情報にアクセスすることが困難でした。
 
